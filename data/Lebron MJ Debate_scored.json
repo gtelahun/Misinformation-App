@@ -1,0 +1,1178 @@
+{
+  "meta": {
+    "input_file": "Lebron_vs_MJ_transcript.json",
+    "created_local": "2026-03-10 16:09:00",
+    "score_version": "v1.0_universal_research_grade",
+    "content_type": "debate",
+    "routing_confidence": 0.9,
+    "routing_notes": "The transcript features a back-and-forth discussion between multiple speakers debating the performance and legacy of basketball players, specifically Michael Jordan and LeBron James. The format includes direct challenges and responses typical of a debate setting.",
+    "runtime_sec": 24.481,
+    "settings": {
+      "MIN_WORDS_TO_SCORE": 8,
+      "MAX_SOURCES_PER_VERIFIED_SEGMENT": 2,
+      "PARALLEL_WORKERS": 6,
+      "WEB_VERIFICATION_ENABLED": true,
+      "MODEL_ROUTER": "gpt-4o-mini",
+      "MODEL_ANALYZE_1": "gpt-4o-mini",
+      "MODEL_ANALYZE_2": null,
+      "MODEL_VERIFY": "gpt-4o-mini",
+      "MODEL_AGREEMENT_ENABLED": false
+    },
+    "speakers_scored": [
+      "A",
+      "C"
+    ],
+    "speaker_roles": {
+      "A": {
+        "role": "commentator",
+        "confidence": 0.9,
+        "reason": "The speaker is expressing opinions and engaging in a debate about LeBron James' status in basketball history, using a conversational tone typical of commentators.",
+        "signals": {
+          "duration_sec": 242.767,
+          "words": 840
+        }
+      },
+      "B": {
+        "role": "audience",
+        "confidence": 0.9,
+        "reason": "The speaker is reacting to something said in the debate, using informal language and addressing someone directly, which indicates they are likely part of the audience.",
+        "signals": {
+          "duration_sec": 80.034,
+          "words": 279
+        }
+      },
+      "C": {
+        "role": "commentator",
+        "confidence": 0.9,
+        "reason": "The speaker is expressing strong opinions and critiques about LeBron James and Michael Jordan, engaging in a debate-like discourse without moderating structure, which aligns with the role of a commentator.",
+        "signals": {
+          "duration_sec": 163.864,
+          "words": 562
+        }
+      },
+      "D": {
+        "role": "commentator",
+        "confidence": 0.9,
+        "reason": "The speaker is providing an opinion and analysis on the performance of basketball players, comparing statistics and making hypothetical statements without moderating structure.",
+        "signals": {
+          "duration_sec": 102.914,
+          "words": 308
+        }
+      },
+      "E": {
+        "role": "commentator",
+        "confidence": 0.85,
+        "reason": "The speaker is providing an opinion on LeBron's abilities and contributions, engaging in a debate about his performance without moderating structure.",
+        "signals": {
+          "duration_sec": 33.328,
+          "words": 114
+        }
+      }
+    },
+    "speaker_selection_debug": {
+      "ranked_by_talk_time": [
+        "A",
+        "C",
+        "D",
+        "B",
+        "E"
+      ],
+      "fallback_applied": false,
+      "fallback_reason": "Debate: selected top 2 substantive speakers."
+    },
+    "transcribe_meta": {
+      "audio_file": "Lebron_vs_MJ.mp3",
+      "created_local": "2026-03-10 16:08:35",
+      "model": "gpt-4o-transcribe-diarize",
+      "transcribe_version": "v5_universal_consolidated",
+      "segments_out": 71
+    }
+  },
+  "definitions": {
+    "fakeness_score": "Probability-like truth-risk that a statement is false or misleading, based on verification of factual accuracy and claim reliability using web sources. 0–1. Null if verification did not run or no checkable claim exists.",
+    "bias_score": "Degree of linguistic/ideological bias in phrasing, framing, exaggeration, loaded language, or manipulative rhetoric. 0–1. This is NOT about factual truth.",
+    "political_leaning": "Classification of overall political orientation in the segment (Left, Right, Neutral, Not Applicable).",
+    "emotion_tone": "Dominant emotional tone expressed (categorical label, e.g., calm, angry, fearful, sarcastic, critical).",
+    "overall_misleading_index": "Composite measure summarizing misleadingness. If fakeness_score exists: average(bias_score, fakeness_score). Else: equals bias_score.",
+    "model_agreement_score": "Agreement between two independent model scoring passes (0–1). Reported when a second analysis model is enabled. Computed from similarity of bias scores and categorical matches (leaning/kind).",
+    "analysis_confidence": "Confidence (0–1) in NON-verification outputs: bias_score, emotion_tone, segment_kind, stance fields, political_leaning.",
+    "fakeness_confidence": "Confidence (0–1) in verification result ONLY. Present only when fakeness_score exists.",
+    "verification_verdict": "One of: supported, contradicted, mixed, insufficient. Only present if verification ran.",
+    "segment_kind": "One of: factual_claim, policy_claim, values_statement, question, personal_attack, analysis, descriptive, other.",
+    "stance_target": "Entity/issue being discussed (string) or null if unclear.",
+    "stance_direction": "One of: pro, anti, neutral/unclear (relative to stance_target).",
+    "sources": "Verification sources used for fakeness_score (hard-capped by MAX_SOURCES_PER_VERIFIED_SEGMENT).",
+    "speaker_roles": "Per-speaker inferred role: candidate/debater, moderator/host, journalist/analyst, commentator, audience, narrator, other.",
+    "speaker_selection": "Speakers to score are selected automatically. Moderators/hosts/journalists/audience/narrator are excluded from scoring. Debate content requires at least 2 substantive debaters; fallback selects top talk-time speakers if needed."
+  },
+  "summary": {
+    "global": {
+      "avg_bias": 0.229,
+      "avg_fakeness": 0.1,
+      "avg_overall_misleading_index": 0.221,
+      "segments_scored": 34,
+      "segments_verified": 2,
+      "model_agreement_score": null
+    },
+    "per_speaker": {
+      "A": {
+        "role": "commentator",
+        "role_confidence": 0.9,
+        "segments": 23,
+        "avg_bias": 0.239,
+        "avg_fakeness": 0.1,
+        "avg_overall_misleading_index": 0.226,
+        "avg_model_agreement_score": null
+      },
+      "C": {
+        "role": "commentator",
+        "role_confidence": 0.9,
+        "segments": 11,
+        "avg_bias": 0.209,
+        "avg_fakeness": null,
+        "avg_overall_misleading_index": 0.209,
+        "avg_model_agreement_score": null
+      }
+    }
+  },
+  "segments": [
+    {
+      "segment_id": "seg_0",
+      "speaker": "A",
+      "time": {
+        "start": 1.62,
+        "end": 2.72
+      },
+      "text": "Why the long face?",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 1.0,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_4",
+      "speaker": "C",
+      "time": {
+        "start": 9.27,
+        "end": 15.07
+      },
+      "text": "This is such a waste of time. It really, really is. Ladies and gentlemen, it is.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "frustration",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_6",
+      "speaker": "C",
+      "time": {
+        "start": 16.502,
+        "end": 45.496
+      },
+      "text": "Yes, it is. Don't get me started. I'm going to start imitating you. I'm going to start imitating you, Shannon. It's the truth, Shannon. Listen, y'all, you're talking about a dude that played about 483 more games, okay? He has played seven more years than Michael Jordan. We want to talk about 30 points, all right, like the 30-point record. How about this 30-point record, Swaggoo? Did you know that Michael Jordan averaged 30 in his career?",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "frustrated",
+        "segment_kind": "analysis",
+        "stance_target": "Michael Jordan",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": "Michael Jordan averaged 30 points in his career.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8",
+      "speaker": "C",
+      "time": {
+        "start": 46.596,
+        "end": 110.474
+      },
+      "text": "Did you know that Michael Jordan went seven straight years averaging over 30? Did you know that? I mean, it's just unbelievable to me. Listen, and then I bring this stuff up and I'm hating once again. I have LeBron James, and this is what bothers me about your goat, Shannon, and your goat swag. See, this is what gets on my nerves about it, and that's why you got people thinking I'm a hater when it comes to him, because I'm not. I just get irritated by certain things. For example, him talking to the reporter yesterday, oh, you know, such and such and honor, and I wore 23 because of him. This the same dude, don't let me get, don't let me drop some knowledge about what LeBron James has insisted upon. on in business and beyond to make sure he wasn't associated with Michael Jordan like those damn Space Jam movies don't get me started I mean did y'all just start with me now because because because he wants to sit up there because oh my goodness somebody it can't be somebody else that damn rich Paul who I love I love my brother but here's what rich Paul does you know what y'all act like it's an insult",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.6,
+        "emotion_tone": "frustrated",
+        "segment_kind": "analysis",
+        "stance_target": "LeBron James",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": "Michael Jordan went seven straight years averaging over 30",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_9",
+      "speaker": "A",
+      "time": {
+        "start": 110.724,
+        "end": 118.024
+      },
+      "text": "For LeBron James to be considered the second greatest player of all time, Rich Paul, it isn't insulting.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "values_statement",
+        "stance_target": "LeBron James",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_11",
+      "speaker": "A",
+      "time": {
+        "start": 119.924,
+        "end": 128.624
+      },
+      "text": "nah, nah, nah, nah. I'll stop it. Listen, the bottom line is this. He's played seven more years. Didn't we have 500 more games?",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "dismissive",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "He has played seven more years and had 500 more games.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13",
+      "speaker": "A",
+      "time": {
+        "start": 130.136,
+        "end": 136.236
+      },
+      "text": "and it's just they know my facts are on the point but they might want to fight me and their father to a game please",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.5,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "confused",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_14",
+      "speaker": "C",
+      "time": {
+        "start": 136.236,
+        "end": 138.136
+      },
+      "text": "What What do you want? What total do you want to see?",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 1.0,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_16",
+      "speaker": "A",
+      "time": {
+        "start": 152.436,
+        "end": 157.386
+      },
+      "text": "you Shannon ain't nobody running from you Shannon it's television this ain't the football field or the weight room",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "defensive",
+        "segment_kind": "personal_attack",
+        "stance_target": "Shannon",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19",
+      "speaker": "A",
+      "time": {
+        "start": 170.29,
+        "end": 171.24
+      },
+      "text": "You want to do that?",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 1.0,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_21",
+      "speaker": "C",
+      "time": {
+        "start": 209.65,
+        "end": 216.8
+      },
+      "text": "now amount of shots versus amount of games? No, no. Wait a second. Stephen, they is saying, Stephen, they is saying.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "confused",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_23",
+      "speaker": "C",
+      "time": {
+        "start": 217.85,
+        "end": 220.05
+      },
+      "text": "Stephen, hold on. Stephen A is saying that he played",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_24",
+      "speaker": "A",
+      "time": {
+        "start": 221.821,
+        "end": 232.021
+      },
+      "text": "52 more it was 488 turnovers 52 but you're saying because he took more shots I want to make sure I get this correct yes",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_26",
+      "speaker": "C",
+      "time": {
+        "start": 247.371,
+        "end": 255.571
+      },
+      "text": "this shake since I'm in New York. I'm going to have it. Since I'm in New York, say let me handle it and you handle Stephen A. And you handle Stephen A.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_27",
+      "speaker": "A",
+      "time": {
+        "start": 255.971,
+        "end": 257.921
+      },
+      "text": "Excuse me. I didn't pick that guy. Excuse",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_28",
+      "speaker": "C",
+      "time": {
+        "start": 257.921,
+        "end": 293.463
+      },
+      "text": "it's the me. way you asked it. It's the way you asked it. You asked it like you were on Stephen A's side and me and Shay just wants to humbly express that I need to know how many of those shots we're taking beyond the seven years that LeBron has played more than Jordan. Shay just went through it. Same amount of shots. That's more points, okay? That's important because can we not argue that if LeBron was as volume of a shooter as Jordan and Kobe was in his career, we wouldn't be having a points conversation. Can I take it to you?",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "defensive",
+        "segment_kind": "analysis",
+        "stance_target": "LeBron James",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": "LeBron has played more than Jordan for seven years.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_31",
+      "speaker": "A",
+      "time": {
+        "start": 332.173,
+        "end": 381.927
+      },
+      "text": "He was playing. But as physical as the game was, and he'd have to go to the free throw line with his 73% shooting self from the free throw line career-wise, the jumper that was suspect for the vast majority of his career, we ain't, and then we want to talk about scoring. We don't. We don't want to bring up the six rings. The fact that Jordan played seven less years and still got two more rings. We don't want to bring up a 10-time scoring champion. We don't want to bring up a nine-time first-team All-NBA defensive player. We don't want to bring all of that up. So we're just going to stay with scoring. But we're going to ignore the road traveled. We're going to ignore the level of adversity that you've got to deal with now compared to what it was then. Didn't we just finish? This lamenting three-point shot and how the physicality of the –",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "frustrated",
+        "segment_kind": "analysis",
+        "stance_target": "Michael Jordan's career achievements",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": "He has a 73% career free throw shooting percentage.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_32",
+      "speaker": "C",
+      "time": {
+        "start": 381.927,
+        "end": 386.277
+      },
+      "text": "Michael then, absolutely, and it's a different game. But isn't everybody bigger, faster, stronger now?",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "curious",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_35",
+      "speaker": "A",
+      "time": {
+        "start": 388.877,
+        "end": 409.247
+      },
+      "text": "come on, it's more skill, but the game has transitioned so drastically because obviously you wanted to appeal to an audience. You wanted more offense that the league stepped in and facilitated rule changes that provoked more offense. But we're going to ignore that that wasn't And the Kate Jordan era. We're going to ignore that.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Source",
+            "url": "https://www.theguardian.com/sport/2022/sep/09/mlb-rule-changes-pitch-clock-shift-ban-bigger-bases?utm_source=openai"
+          },
+          {
+            "title": "Source",
+            "url": "https://apnews.com/article/23514547df9b0c16b9348ae54c62a9e5?utm_source=openai"
+          }
+        ],
+        "verification_reasoning": "Multiple sports leagues have introduced rule changes aimed at enhancing offensive play. For instance, Major League Baseball (MLB) implemented a pitch clock, limited defensive shifts, and increased base sizes in 2023 to speed up the game and boost offense. ([theguardian.com](https://www.theguardian.com/sport/2022/sep/09/mlb-rule-changes-pitch-clock-shift-ban-bigger-bases?utm_source=openai)) Similarly, the National Football League (NFL) made kickoff rule changes permanent in 2025, resulting in a higher rate of kickoff returns and increased scoring opportunities. ([apnews.com](https://apnews.com/article/23514547df9b0c16b9348ae54c62a9e5?utm_source=openai)) Additionally, the United Football League (UFL) announced in 2026 a series of rule changes, including a four-point field goal and restrictions on punting, designed to make games more exciting and higher-scoring. ([en.wikipedia.org](https://en.wikipedia.org/wiki/2026_UFL_season?utm_source=openai)) These examples demonstrate that leagues have actively facilitated rule changes to promote offensive play.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "frustration",
+        "segment_kind": "analysis",
+        "stance_target": "league rule changes",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "the league stepped in and facilitated rule changes that provoked more offense",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_37",
+      "speaker": "A",
+      "time": {
+        "start": 426.347,
+        "end": 440.757
+      },
+      "text": "That's a stop it. Stop it right there. That's the five five. Let me tell you something. I'm at six. That's my favorite number, six and oh. Undefeated in championship. But that's exactly what I'm talking about. I got you number two all time and I'm disrespecting See, you. Number two all time.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "frustrated",
+        "segment_kind": "personal_attack",
+        "stance_target": "opponent",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_38",
+      "speaker": "C",
+      "time": {
+        "start": 440.757,
+        "end": 442.757
+      },
+      "text": "Let's waggo. Let's waggo get in here.",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_39",
+      "speaker": "A",
+      "time": {
+        "start": 444.947,
+        "end": 457.747
+      },
+      "text": "and Shea also, to rebut everything that Stephen A said, me and Shea could also say at 18 years old, he never had a bad season. LeBron has never had a bad basketball season since he entered the NBA",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": "LeBron James",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": "LeBron has never had a bad basketball season since he entered the NBA.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_40",
+      "speaker": "C",
+      "time": {
+        "start": 457.747,
+        "end": 458.447
+      },
+      "text": "have a at bad 18 season?",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_41",
+      "speaker": "A",
+      "time": {
+        "start": 458.447,
+        "end": 465.797
+      },
+      "text": "years old. So how much credit are we going to give to that? Because a lot of these guys didn't even play that much when they first entered the league.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_43",
+      "speaker": "A",
+      "time": {
+        "start": 472.101,
+        "end": 482.301
+      },
+      "text": "that guy was living in a dorm calling his mom for stamps at 18 your guy was living in a dorm on his mom for stamps and getting his line in his son how long we have at 19 how",
+      "scores": {
+        "bias_score": 0.5,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.5,
+        "emotion_tone": "frustration",
+        "segment_kind": "personal_attack",
+        "stance_target": "your guy",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_45",
+      "speaker": "A",
+      "time": {
+        "start": 483.951,
+        "end": 487.751
+      },
+      "text": "can we have a greatness conversation how can we have a greatness conversation",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_47",
+      "speaker": "A",
+      "time": {
+        "start": 494.379,
+        "end": 534.859
+      },
+      "text": "I just here's the thing. Stephen A. laid out Jordan's Yeah. what he's done. And nobody argues that Jordan is not the greatest or the greatest. Right. If you own Jordan's side. But every time we had this conversation, we lay out his accolades to disband LeBron accolades for some reason. And I'm like LeBron got in this. He got in the NBA and has done something no one has ever done. And we want to take, well, he's been there 20 years, so why wouldn't we? Well, playing 20 years ain't a part of greatness. That's not a part of the conversation. When you were 18 and you entered the NBA at a franchise that nobody watched.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "LeBron James becomes highest scoring NBA player of all time",
+            "url": "https://www.guinnessworldrecords.com/news/2023/2/lebron-james-becomes-highest-scoring-nba-player-of-all-time-736023"
+          },
+          {
+            "title": "LeBron James becomes first to score 50,000 combined points in NBA regular season and playoffs",
+            "url": "https://apnews.com/article/c990128165b6a720599fbf9c639217a4"
+          }
+        ],
+        "verification_reasoning": "LeBron James has set numerous NBA records that are unique to him, including becoming the all-time leading scorer, surpassing 39,000 career points, and being the first player to play in four different decades. These accomplishments are unprecedented in NBA history.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "defensive",
+        "segment_kind": "analysis",
+        "stance_target": "LeBron James",
+        "stance_direction": "pro",
+        "political_leaning": "Not Applicable",
+        "claim_text": "LeBron got in the NBA and has done something no one has ever done.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_49",
+      "speaker": "A",
+      "time": {
+        "start": 536.809,
+        "end": 538.359
+      },
+      "text": "I'm just saying it's just, see.",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_54",
+      "speaker": "A",
+      "time": {
+        "start": 548.005,
+        "end": 561.008
+      },
+      "text": "We're asking you to put ESP on it because when your guy, hey, Fagoo, when your guy. Stephen A., when your guy was 20, he was living in the dorm driving a moped. My guy was getting jumpers against Sacramento and Boston.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "confrontational",
+        "segment_kind": "personal_attack",
+        "stance_target": "Stephen A.",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_57",
+      "speaker": "A",
+      "time": {
+        "start": 579.382,
+        "end": 587.132
+      },
+      "text": "When my guy was 20, when your guy was 20, he was getting knocked out in the sweet 16. My guy was going to the home against the Lakers.",
+      "scores": {
+        "bias_score": 0.5,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.5,
+        "emotion_tone": "competitive",
+        "segment_kind": "personal_attack",
+        "stance_target": "your guy",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_59",
+      "speaker": "A",
+      "time": {
+        "start": 598.824,
+        "end": 602.324
+      },
+      "text": "see. He was the most outstanding player. Who was the most outstanding player?",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_62",
+      "speaker": "A",
+      "time": {
+        "start": 619.274,
+        "end": 621.474
+      },
+      "text": "Who was the most outstanding player of the year?",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 1.0,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_65",
+      "speaker": "A",
+      "time": {
+        "start": 626.652,
+        "end": 630.402
+      },
+      "text": "would have happened if LeBron would have went to college. What do we think would have happened?",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_70",
+      "speaker": "A",
+      "time": {
+        "start": 641.058,
+        "end": 650.358
+      },
+      "text": "18 years old he went to the Cleveland Cavaliers and we here at year 21 and he ain't never let a franchise owner you're lying overtime",
+      "scores": {
+        "bias_score": 0.5,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.5,
+        "emotion_tone": "frustration",
+        "segment_kind": "analysis",
+        "stance_target": "Cleveland Cavaliers",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    }
+  ]
+}

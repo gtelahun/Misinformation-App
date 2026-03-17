@@ -1,0 +1,1190 @@
+{
+  "meta": {
+    "input_file": "vaccine_transcript.json",
+    "created_local": "2026-03-05 18:56:39",
+    "score_version": "v1.0_universal_research_grade",
+    "content_type": "informational",
+    "routing_confidence": 0.95,
+    "routing_notes": "The transcript provides a detailed explanation of how vaccines work, their benefits, and the risks associated with them, presented by a single main speaker.",
+    "runtime_sec": 31.663,
+    "settings": {
+      "MIN_WORDS_TO_SCORE": 8,
+      "MAX_SOURCES_PER_VERIFIED_SEGMENT": 2,
+      "PARALLEL_WORKERS": 6,
+      "WEB_VERIFICATION_ENABLED": true,
+      "MODEL_ROUTER": "gpt-4o-mini",
+      "MODEL_ANALYZE_1": "gpt-4o-mini",
+      "MODEL_ANALYZE_2": null,
+      "MODEL_VERIFY": "gpt-4o-mini",
+      "MODEL_AGREEMENT_ENABLED": false
+    },
+    "speakers_scored": [
+      "A"
+    ],
+    "speaker_roles": {
+      "A": {
+        "role": "narrator",
+        "confidence": 0.9,
+        "reason": "The text provides an informative explanation about vaccines and the immune system without engaging in debate or asking questions, indicating a narrative style.",
+        "signals": {
+          "duration_sec": 8466.99,
+          "words": 1536
+        }
+      }
+    },
+    "speaker_selection_debug": {
+      "ranked_by_talk_time": [
+        "A"
+      ],
+      "fallback_applied": false,
+      "fallback_reason": "Informational: included primary speaker."
+    },
+    "transcribe_meta": {
+      "audio_file": "vaccine.mp3",
+      "created_local": "2026-03-05 18:56:07",
+      "model": "gpt-4o-transcribe-diarize",
+      "transcribe_version": "v5_universal_consolidated",
+      "segments_out": 5
+    }
+  },
+  "definitions": {
+    "fakeness_score": "Probability-like truth-risk that a statement is false or misleading, based on verification of factual accuracy and claim reliability using web sources. 0–1. Null if verification did not run or no checkable claim exists.",
+    "bias_score": "Degree of linguistic/ideological bias in phrasing, framing, exaggeration, loaded language, or manipulative rhetoric. 0–1. This is NOT about factual truth.",
+    "political_leaning": "Classification of overall political orientation in the segment (Left, Right, Neutral, Not Applicable).",
+    "emotion_tone": "Dominant emotional tone expressed (categorical label, e.g., calm, angry, fearful, sarcastic, critical).",
+    "overall_misleading_index": "Composite measure summarizing misleadingness. If fakeness_score exists: average(bias_score, fakeness_score). Else: equals bias_score.",
+    "model_agreement_score": "Agreement between two independent model scoring passes (0–1). Reported when a second analysis model is enabled. Computed from similarity of bias scores and categorical matches (leaning/kind).",
+    "analysis_confidence": "Confidence (0–1) in NON-verification outputs: bias_score, emotion_tone, segment_kind, stance fields, political_leaning.",
+    "fakeness_confidence": "Confidence (0–1) in verification result ONLY. Present only when fakeness_score exists.",
+    "verification_verdict": "One of: supported, contradicted, mixed, insufficient. Only present if verification ran.",
+    "segment_kind": "One of: factual_claim, policy_claim, values_statement, question, personal_attack, analysis, descriptive, other.",
+    "stance_target": "Entity/issue being discussed (string) or null if unclear.",
+    "stance_direction": "One of: pro, anti, neutral/unclear (relative to stance_target).",
+    "sources": "Verification sources used for fakeness_score (hard-capped by MAX_SOURCES_PER_VERIFIED_SEGMENT).",
+    "speaker_roles": "Per-speaker inferred role: candidate/debater, moderator/host, journalist/analyst, commentator, audience, narrator, other.",
+    "speaker_selection": "Speakers to score are selected automatically. Moderators/hosts/journalists/audience/narrator are excluded from scoring. Debate content requires at least 2 substantive debaters; fallback selects top talk-time speakers if needed."
+  },
+  "summary": {
+    "global": {
+      "avg_bias": 0.277,
+      "avg_fakeness": 0.2,
+      "avg_overall_misleading_index": 0.273,
+      "segments_scored": 35,
+      "segments_verified": 6,
+      "model_agreement_score": null
+    },
+    "per_speaker": {
+      "A": {
+        "role": "narrator",
+        "role_confidence": 0.9,
+        "segments": 35,
+        "avg_bias": 0.277,
+        "avg_fakeness": 0.2,
+        "avg_overall_misleading_index": 0.273,
+        "avg_model_agreement_score": null
+      }
+    }
+  },
+  "segments": [
+    {
+      "segment_id": "seg_0",
+      "speaker": "A",
+      "time": {
+        "start": 0.788,
+        "end": 26.238
+      },
+      "text": "Vaccines are celebrated for their part in fighting disease. But a growing group of people seem to believe that they endanger our health instead of protecting it. The internet is full of stories about allergic reactions, the onset of disabilities, and even death following vaccination appointments. And it's true vaccines can have side effects. Let's look at how they work, and how dangerous they really are.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "caution",
+        "segment_kind": "analysis",
+        "stance_target": "vaccines",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part0",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "Your immune system is a complex army of billions of cells, soldiers, intelligent cells and weapons factories. Every day you're attacked countless times, but your immune soldiers alone usually deal with that so you don't even notice. If an infection becomes serious, though, our intelligent cells gather intel about the attackers and activate our weapons factories.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "descriptive",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part2",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "Unfortunately, this process takes several days to complete. That gives intruders a lot of time to do damage. Contrary to popular wisdom, what doesn't kill you doesn't make you stronger.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "caution",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part3",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "Our bodies really don't want to fight serious wars over and over, so our immune system came up with an ingenious way to get stronger and stronger over time. If we fight an enemy that is dangerous enough to trigger our heavy weapons, our immune system automatically creates memory cells. Memory cells remain in our body for years in a deep sleep.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part1",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "You know the weapon? Antibodies. They're like targeted missiles, produced specifically to combat the invader.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part5",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "You might even be immune against them forever, which is also why little kids are constantly ill. They don't have enough memory cells yet. And this beautiful natural mechanism is what we build on when we use vaccines.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "vaccines",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part4",
+      "speaker": "A",
+      "time": {
+        "start": 37.14,
+        "end": 136.775
+      },
+      "text": "They do nothing but remember. When an enemy attacks for For a second time, the slumbering memory cells awaken and order coordinated attacks and the production of antibodies. This is so fast and effective that many infections you beat once will never make you sick again.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.3,
+        "fakeness_confidence": 0.8,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Natural Immunity: What It Is",
+            "url": "https://my.clevelandclinic.org/health/articles/21274-natural-immunity"
+          }
+        ],
+        "verification_reasoning": "The claim is partially supported but requires nuance. For certain infections, such as measles and hepatitis A, a single exposure typically results in lifelong immunity, preventing future illness. However, for other infections, immunity may be temporary or incomplete, and reinfection can occur. For example, immunity to coronaviruses like SARS-CoV-2 can wane over time, and reinfections have been documented, especially with emerging variants. Therefore, while many infections do confer immunity, the duration and completeness of this protection vary depending on the pathogen and individual factors.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": "Many infections you beat once will never make you sick again.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part1",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "One way of doing this is to inject invaders that can't do harm, for example by killing them or by ripping them into pieces. Our immune systems deal with these kinds of vaccines pretty easily. Sometimes it's necessary to make our immune system work harder though to produce even more memory cells.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part2",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "Live vaccines are the real deal; an enemy that can punch back is a bigger challenge than a dead one. But this also sounds like a sort of horrible idea. What if the germs win?",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "uncertainty",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part0",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "How Vaccines Work As great as memory cells are, obtaining them through an infection is unpleasant and sometimes dangerous. Vaccines are a way of tricking our bodies into making memory cells and becoming immune to a disease. They pretend to be a dangerous infection.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part3",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "To avoid that we breed a sort of weak cousin of the real germ in the lab. just powerful enough to annoy the immune system and create enough memory cells. Okay, so these are the basic principles of vaccine use.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part8",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "Are they worth the risk of vaccine side effects? Let's do a thought experiment based on real numbers. Imagine a developed country in a parallel world.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part5",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "Like everything in life, vaccines have another side: side effects. What are they and what happens if your child develops one? The Risks of Vaccines It's complicated to directly compare the side effects of vaccines with the effects of diseases.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "vaccines",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part6",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "For example, hundreds of millions of people are vaccinated against measles in the West, but there were only 83,000 cases in Europe in 2018. So with numbers that different, even mild side effects can seem scary compared to the bad effects of a disease that we don't see as much anymore. Before the measles vaccine became available in 1963, virtually every single child on earth contracted measles at some point.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "There were 83,000 cases of measles in Europe in 2018.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part4",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "They provoke a natural reaction in our bodies that makes us become immune against very dangerous diseases. Some, like the flu virus, mutate so often that we need a new vaccine every year, but most vaccines protect us for years or or even a lifetime. But there's a catch.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.3,
+        "fakeness_confidence": 0.8,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Duration of immunity following full vaccination against SARS-CoV-2: a systematic review",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9436729/"
+          },
+          {
+            "title": "How long does coronavirus vaccine provide immunity?",
+            "url": "https://www.washingtonpost.com/lifestyle/2021/03/29/how-long-immunity-lasts-covid-vaccine/"
+          }
+        ],
+        "verification_reasoning": "The duration of immunity provided by vaccines varies significantly depending on the specific vaccine and the disease it targets. Some vaccines, such as those for hepatitis B and polio, offer long-term or even lifetime protection. However, other vaccines, like those for influenza, require annual updates and booster doses due to waning immunity and the emergence of new strains. Therefore, while many vaccines provide extended protection, it is not accurate to state that most vaccines offer protection for years or a lifetime without considering the specific context.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "Most vaccines protect us for years or even a lifetime.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part7",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "An estimated 135 million cases in the 1950s. Every single year. But aren't measles really that dangerous in the year 2019 with our advanced healthcare and new technologies?",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "curious",
+        "segment_kind": "question",
+        "stance_target": "measles",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "An estimated 135 million cases in the 1950s.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part13",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "The kids who beat measles are left with a severely damaged immune system that needs a lot of time to regenerate. Time for other diseases to do further damage. Aside from that, what's almost guaranteed is that your kids will have a really bad time for about 2 weeks.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "negative",
+        "segment_kind": "analysis",
+        "stance_target": "measles",
+        "stance_direction": "anti",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part9",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "It has good healthcare, but people stopped vaccinating. In this scenario, let's say 10 million children caught measles. What happens?",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "10 million children caught measles",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part14",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "Okay, but what about vaccines? It's only fair to look at these risks, too. So let's repeat our thought experiment, but this time we vaccinate 10 million children with MMR.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": "vaccines",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part11",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "600,000 kids, or 6%, will suffer from pneumonia, the most dangerous dangerous effect of measles. It alone will kill 12,000 children. Up to 10,000 children or 0.1% will get encephalitis.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "serious",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "600,000 kids, or 6%, will suffer from pneumonia, the most dangerous effect of measles. It alone will kill 12,000 children. Up to 10,000 children or 0.1% will get encephalitis.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part10",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "9,800,000 or 98% will get a high fever and a very unpleasant rash. Up to 800,000 of them, or 8%, will suffer from dangerous diarrhoea. 700,000 or 7% will suffer from an ear infection, which can lead to permanent hearing loss.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "9,800,000 or 98% will get a high fever and a very unpleasant rash. Up to 800,000 of them, or 8%, will suffer from dangerous diarrhoea. 700,000 or 7% will suffer from an ear infection, which can lead to permanent hearing",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part12",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "2,500 kids, or 0.025% will contract SSPE, a disease where the measles virus lingers in their brain and kills them a few years later. Taken together, around 2.5 million children will suffer from somewhat serious effects from measles, and about 20,000 children will be killed by measles. It doesn't stop here, though.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "serious",
+        "segment_kind": "factual_claim",
+        "stance_target": "measles",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "2,500 kids, or 0.025% will contract SSPE, a disease where the measles virus lingers in their brain and kills them a few years later.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part15",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "What would theoretically happen here? After being vaccinated about 10 million kids, around 10% get a fever. 500,000 or 5% will get a mild rash.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.3,
+        "fakeness_confidence": 0.8,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Safety Monitoring of Pfizer-BioNTech COVID-19 Vaccine Booster Doses Among Children Aged 5–11 Years — United States, May 17–July 31, 2022",
+            "url": "https://www.cdc.gov/mmwr/volumes/71/wr/mm7133a3.htm"
+          },
+          {
+            "title": "COVID-19 mRNA Vaccine Safety Among Children Aged 6 months to 5 years — United States, June 18–August 21, 2022",
+            "url": "https://www.cdc.gov/mmwr/volumes/71/wr/mm7135a3.htm"
+          }
+        ],
+        "verification_reasoning": "The claim that 10% of vaccinated children experience a fever and 5% develop a mild rash is not supported by available data. Studies indicate that fever occurs in about 1.4% to 5.1% of children post-vaccination, and rash in approximately 0.5% to 9.5%. Therefore, the reported percentages in the claim are higher than those observed in these studies.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "After being vaccinated about 10 million kids, around 10% get a fever. 500,000 or 5% will get a mild rash.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part16",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "Up to 100 or 0.001% might have a serious allergic reaction and will have to be treated. Up to ten boys, or 0.0001%, might get inflammation of the genitalia. And up to ten kids in total, or 0.0001%, might get the most serious side effect, encephalitis.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "Up to 100 or 0.001% might have a serious allergic reaction and will have to be treated.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part18",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "What about autism? The connection of autism and vaccines stems from one source that has been disproven countless times. We'll link to further reading and videos in the description.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Study Linking Autism, Vaccines Deemed an 'Elaborate Fraud'",
+            "url": "https://autismsciencefoundation.org/press_releases/study-linking-autism-vaccines-deemed-an-elaborate-fraud/"
+          },
+          {
+            "title": "Study Linking Autism to Vaccine Retracted",
+            "url": "https://www.cbsnews.com/news/study-linking-autism-to-vaccine-retracted/"
+          }
+        ],
+        "verification_reasoning": "The claim accurately reflects the origin of the vaccine-autism myth, which traces back to a 1998 study by Andrew Wakefield. This study was retracted in 2010 due to ethical violations and falsified data. Subsequent extensive research has found no link between vaccines and autism, confirming the discrediting of the original study. Therefore, the claim is well-supported by evidence.",
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": "autism and vaccines",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "The connection of autism and vaccines stems from one source that has been disproven countless times.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part19",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "But in 2019, it's fair to say that vaccines do not cause autism. Alright, but what about deaths? It's really hard to say if even a single one of our ten million vaccinated kids would die.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.95,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Measles, Mumps, Rubella Vaccination and Autism: A Nationwide Cohort Study",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30831578/"
+          },
+          {
+            "title": "WHO expert group’s new analysis reaffirms there is no link between vaccines and autism",
+            "url": "https://www.who.int/news/item/11-12-2025-who-expert-group-s-new-analysis-reaffirms-there-is-no-link-between-vaccines-and-autism"
+          }
+        ],
+        "verification_reasoning": "The claim that vaccines do not cause autism is strongly supported by scientific evidence. Multiple large-scale studies have found no association between vaccines and autism. For instance, a 2019 study involving over 657,000 children in Denmark found no increased risk of autism associated with the measles, mumps, and rubella (MMR) vaccine. ([pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/30831578/?utm_source=openai)) Additionally, the World Health Organization's Global Advisory Committee on Vaccine Safety reaffirmed in December 2025 that there is no link between vaccines and autism. ([who.int](https://www.who.int/news/item/11-12-2025-who-expert-group-s-new-analysis-reaffirms-there-is-no-link-between-vaccines-and-autism?utm_source=openai)) Therefore, the claim is accurate and well-supported by scientific research.",
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "vaccines",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "In 2019, vaccines do not cause autism.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part17",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "So we vaccinated 10 million kids. In total, around 120 had side effects that were somewhat serious. With a good medical treatment in developed regions, almost all of them will be fine.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "10 million kids were vaccinated and around 120 had somewhat serious side effects.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2_part20",
+      "speaker": "A",
+      "time": {
+        "start": 138.561,
+        "end": 484.477
+      },
+      "text": "We really did look hard and talk to a lot of different experts. If we ignore self-reporting, we could only come up with a tiny handful of documented cases for all the hundreds of millions of children who received the MMR vaccine since 1971.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": "MMR vaccine",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "There are a tiny handful of documented cases for all the hundreds of millions of children who received the MMR vaccine since 1971.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part2",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "Well, yes, but do you personally think it's safer to not put a seatbelt on your kid? Wait a second. What if your kid is actually allergic?",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part3",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "What if none of the things we've said applies to your specific situation? In this case, you need to become the greatest... Vaccination promoter of all.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "encouraging",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part0",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "Measles are many, many thousands of times more dangerous for your child than even the absolute worst case of vaccine side effects. You have to search for lethal vaccine side effects with a huge magnifying glass and even then it's very hard to find confirmed cases, while deaths from measles are real and easy to find. In 2017 alone, 110,000 people died from measles worldwide.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "fear",
+        "segment_kind": "factual_claim",
+        "stance_target": "measles and vaccines",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "In 2017 alone, 110,000 people died from measles worldwide.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part1",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "Statistically, today 300 children will die of measles – one since this video started. You can compare vaccines to seatbelts. Are there weird freak accidents where someone gets killed by their seatbelt?",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "urgent",
+        "segment_kind": "factual_claim",
+        "stance_target": "vaccines",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "300 children will die of measles today.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part4",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "Because if your children can't be vaccinated, only the collective can protect them. This is called herd immunity, and it's the only thing that can protect your unvaccinated child. Herd immunity means that enough people are immune to a disease that it can't spread and dies before it reaches its victims.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Herd Immunity",
+            "url": "https://my.clevelandclinic.org/health/articles/22599-herd-immunity"
+          },
+          {
+            "title": "Definition of herd immunity",
+            "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/herd-immunity"
+          }
+        ],
+        "verification_reasoning": "The claim accurately describes the concept of herd immunity, which is achieved when a significant portion of a population becomes immune to an infectious disease, thereby reducing its spread and potentially leading to its elimination. This immunity can result from previous infections or vaccinations. The definition aligns with reputable sources such as the Cleveland Clinic and the National Cancer Institute, which describe herd immunity as protection from an infectious disease due to a large number of individuals being immune, making it harder for the disease to spread. ([my.clevelandclinic.org](https://my.clevelandclinic.org/health/articles/22599-herd-immunity?utm_source=openai))",
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "informative",
+        "segment_kind": "factual_claim",
+        "stance_target": "unvaccinated children",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "Herd immunity means that enough people are immune to a disease that it can't spread and dies before it reaches its victims.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3_part5",
+      "speaker": "A",
+      "time": {
+        "start": 486.281,
+        "end": 573.777
+      },
+      "text": "But to accomplish this for measles alone, 95% of the people around you need to be vaccinated.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "95% of the people around you need to be vaccinated for measles.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_4",
+      "speaker": "A",
+      "time": {
+        "start": 575.703,
+        "end": 630.221
+      },
+      "text": "Conclusion The problem with the debate about vaccines is that it's not fought on a level playing field. While the pro-vaccine side argues with studies and statistics, the arguments against them are usually a wild mixture of gut feeling, anecdotes and misinformation. And feelings are often immune to facts. We'll not convince anybody by screaming at them, but we can't hide from the reality of what anti-vaccine conspiracies do. They kill babies too young to be vaccinated. They kill healthy children that are just unlucky. They bring serious diseases back from the verge of extinction. And the biggest side effect of vaccines is fewer dead children. Vaccines are one of the most powerful tools we have to eradicate the monsters that most of us have already forgotten. Let's not bring the beasts back.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "urgent",
+        "segment_kind": "analysis",
+        "stance_target": "anti-vaccine arguments",
+        "stance_direction": "anti",
+        "political_leaning": "Left",
+        "claim_text": "Vaccines are one of the most powerful tools we have to eradicate serious diseases.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    }
+  ]
+}

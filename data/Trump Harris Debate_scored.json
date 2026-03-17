@@ -1,0 +1,776 @@
+{
+  "meta": {
+    "input_file": "TrumpHarrisdebate_transcript.json",
+    "created_local": "2026-03-05 19:28:35",
+    "score_version": "v1.0_universal_research_grade",
+    "content_type": "debate",
+    "routing_confidence": 0.95,
+    "routing_notes": "The transcript features a back-and-forth exchange between Kamala Harris and Donald Trump, with a moderator facilitating the discussion. The content includes direct questions, rebuttals, and responses typical of a debate format.",
+    "runtime_sec": 20.307,
+    "settings": {
+      "MIN_WORDS_TO_SCORE": 8,
+      "MAX_SOURCES_PER_VERIFIED_SEGMENT": 2,
+      "PARALLEL_WORKERS": 6,
+      "WEB_VERIFICATION_ENABLED": true,
+      "MODEL_ROUTER": "gpt-4o-mini",
+      "MODEL_ANALYZE_1": "gpt-4o-mini",
+      "MODEL_ANALYZE_2": null,
+      "MODEL_VERIFY": "gpt-4o-mini",
+      "MODEL_AGREEMENT_ENABLED": false
+    },
+    "speakers_scored": [
+      "A",
+      "B"
+    ],
+    "speaker_roles": {
+      "A": {
+        "role": "candidate/debater",
+        "confidence": 0.95,
+        "reason": "The speaker is advocating for a position on race and abortion, defending their stance against an opponent, and proposing policy related to Roe v. Wade, which aligns with the role of a candidate in a debate.",
+        "signals": {
+          "duration_sec": 191.236,
+          "words": 589
+        }
+      },
+      "B": {
+        "role": "candidate/debater",
+        "confidence": 0.95,
+        "reason": "The speaker is advocating a position on abortion, discussing their views on a political opponent, and expressing opinions on state rights and legislation, which aligns with the role of a candidate or debater.",
+        "signals": {
+          "duration_sec": 149.826,
+          "words": 523
+        }
+      },
+      "C": {
+        "role": "moderator/host",
+        "confidence": 0.9,
+        "reason": "The speaker welcomes the participants and asks questions, which indicates a moderating role.",
+        "signals": {
+          "duration_sec": 67.484,
+          "words": 199
+        }
+      },
+      "D": {
+        "role": "journalist/analyst",
+        "confidence": 0.9,
+        "reason": "The speaker cites specific statements made by President Trump and references the context of the election, indicating they are analyzing and reporting on the situation rather than participating as a candidate or moderator.",
+        "signals": {
+          "duration_sec": 88.182,
+          "words": 295
+        }
+      }
+    },
+    "speaker_selection_debug": {
+      "ranked_by_talk_time": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "fallback_applied": false,
+      "fallback_reason": "Debate: selected top 2 substantive speakers."
+    },
+    "transcribe_meta": {
+      "audio_file": "TrumpHarrisdebate.mp3",
+      "created_local": "2026-03-05 19:28:15",
+      "model": "gpt-4o-transcribe-diarize",
+      "transcribe_version": "v5_universal_consolidated",
+      "segments_out": 31
+    }
+  },
+  "definitions": {
+    "fakeness_score": "Probability-like truth-risk that a statement is false or misleading, based on verification of factual accuracy and claim reliability using web sources. 0–1. Null if verification did not run or no checkable claim exists.",
+    "bias_score": "Degree of linguistic/ideological bias in phrasing, framing, exaggeration, loaded language, or manipulative rhetoric. 0–1. This is NOT about factual truth.",
+    "political_leaning": "Classification of overall political orientation in the segment (Left, Right, Neutral, Not Applicable).",
+    "emotion_tone": "Dominant emotional tone expressed (categorical label, e.g., calm, angry, fearful, sarcastic, critical).",
+    "overall_misleading_index": "Composite measure summarizing misleadingness. If fakeness_score exists: average(bias_score, fakeness_score). Else: equals bias_score.",
+    "model_agreement_score": "Agreement between two independent model scoring passes (0–1). Reported when a second analysis model is enabled. Computed from similarity of bias scores and categorical matches (leaning/kind).",
+    "analysis_confidence": "Confidence (0–1) in NON-verification outputs: bias_score, emotion_tone, segment_kind, stance fields, political_leaning.",
+    "fakeness_confidence": "Confidence (0–1) in verification result ONLY. Present only when fakeness_score exists.",
+    "verification_verdict": "One of: supported, contradicted, mixed, insufficient. Only present if verification ran.",
+    "segment_kind": "One of: factual_claim, policy_claim, values_statement, question, personal_attack, analysis, descriptive, other.",
+    "stance_target": "Entity/issue being discussed (string) or null if unclear.",
+    "stance_direction": "One of: pro, anti, neutral/unclear (relative to stance_target).",
+    "sources": "Verification sources used for fakeness_score (hard-capped by MAX_SOURCES_PER_VERIFIED_SEGMENT).",
+    "speaker_roles": "Per-speaker inferred role: candidate/debater, moderator/host, journalist/analyst, commentator, audience, narrator, other.",
+    "speaker_selection": "Speakers to score are selected automatically. Moderators/hosts/journalists/audience/narrator are excluded from scoring. Debate content requires at least 2 substantive debaters; fallback selects top talk-time speakers if needed."
+  },
+  "summary": {
+    "global": {
+      "avg_bias": 0.46,
+      "avg_fakeness": 0.225,
+      "avg_overall_misleading_index": 0.416,
+      "segments_scored": 20,
+      "segments_verified": 6,
+      "model_agreement_score": null
+    },
+    "per_speaker": {
+      "A": {
+        "role": "candidate/debater",
+        "role_confidence": 0.95,
+        "segments": 10,
+        "avg_bias": 0.59,
+        "avg_fakeness": 0.175,
+        "avg_overall_misleading_index": 0.532,
+        "avg_model_agreement_score": null
+      },
+      "B": {
+        "role": "candidate/debater",
+        "role_confidence": 0.95,
+        "segments": 10,
+        "avg_bias": 0.33,
+        "avg_fakeness": 0.25,
+        "avg_overall_misleading_index": 0.3,
+        "avg_model_agreement_score": null
+      }
+    }
+  },
+  "segments": [
+    {
+      "segment_id": "seg_0",
+      "speaker": "A",
+      "time": {
+        "start": 1.428,
+        "end": 3.478
+      },
+      "text": "Kamala Harris. Is that a good debate?",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": "Kamala Harris",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3",
+      "speaker": "B",
+      "time": {
+        "start": 14.328,
+        "end": 24.958
+      },
+      "text": "I don't and I don't care. I don't care what she is. I don't care. uh you make a big deal out of something i couldn't care less whatever she wants to be is okay with me i",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "indifferent",
+        "segment_kind": "values_statement",
+        "stance_target": "her identity",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_5",
+      "speaker": "B",
+      "time": {
+        "start": 26.408,
+        "end": 41.358
+      },
+      "text": "don't know i don't know i mean all i can say is i read where she was not black that she put out and i'll say that and then i read that she was black and that's okay either one was okay with me that's up to her that's up to her",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "individual's racial identity",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_6",
+      "speaker": "A",
+      "time": {
+        "start": 41.358,
+        "end": 67.546
+      },
+      "text": "mean, honestly, I think it's a tragedy that we have someone who. wants to be president who has consistently over the course of his career attempted to use race to divide the American people. You know I do believe that the vast majority of us know that we have so much more in common than what separates us and we don't want this kind of approach that is just constantly trying to divide us, and especially by race.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "sadness",
+        "segment_kind": "values_statement",
+        "stance_target": "presidential candidate",
+        "stance_direction": "anti",
+        "political_leaning": "Left",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_7",
+      "speaker": "B",
+      "time": {
+        "start": 67.596,
+        "end": 84.346
+      },
+      "text": "Everything that she believed three years ago and four years ago is out the window. She's going to my philosophy now. In fact, I was going to send her a MAGA hat. She's gone to my philosophy. But if she ever got elected, she'd change it and it will be the end of our country. She's a market.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "critical",
+        "segment_kind": "analysis",
+        "stance_target": "she",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8",
+      "speaker": "A",
+      "time": {
+        "start": 84.443,
+        "end": 124.931
+      },
+      "text": "Marxist. Everybody knows she's a Marxist. Her father's a Marxist professor in economics and he taught her well. She gave up at least 12 and probably 14 or 15 different policies like she was big on defund the police. In Minnesota, she went out. Wait a minute. I'm talking now, if you don't mind, please. Does that sound familiar? They have abortion in the ninth month. They even have, and you can look at the governor of West Virginia, the previous governor of West Virginia, not the current governor who's doing an excellent job, but the governor before, he said the baby will be born and we will decide what to do with the baby. In other words, we'll execute the baby.",
+      "scores": {
+        "bias_score": 0.8,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.8,
+        "emotion_tone": "angry",
+        "segment_kind": "personal_attack",
+        "stance_target": "the individual being referred to as a Marxist",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": "the previous governor of West Virginia said the baby will be born and we will decide what to do with the baby",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_9",
+      "speaker": "B",
+      "time": {
+        "start": 124.931,
+        "end": 129.381
+      },
+      "text": "There is no state in this country where it is legal to kill a baby after it's born.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.05,
+        "fakeness_confidence": 0.95,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Born-Alive Infants Protection Act",
+            "url": "https://en.wikipedia.org/wiki/Born-Alive_Infants_Protection_Act"
+          },
+          {
+            "title": "Unborn Victims of Violence Act",
+            "url": "https://en.wikipedia.org/wiki/Unborn_Victims_of_Violence_Act"
+          }
+        ],
+        "verification_reasoning": "The claim is accurate. All states in the U.S. have laws that protect infants after birth, making it illegal to kill a baby post-birth. The Born-Alive Infants Protection Act of 2002 affirms that any infant born alive, regardless of the circumstances, is considered a person under U.S. law and is entitled to legal protections. Additionally, the Unborn Victims of Violence Act recognizes a 'child in utero' as a legal victim if injured or killed during the commission of certain federal crimes, further emphasizing the legal protections afforded to both unborn and born infants. Therefore, the assertion that no state allows the killing of a baby after birth is supported by federal and state laws.",
+        "overall_misleading_index": 0.075,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "pro",
+        "political_leaning": "Right",
+        "claim_text": "There is no state in this country where it is legal to kill a baby after it's born.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_11",
+      "speaker": "A",
+      "time": {
+        "start": 168.886,
+        "end": 189.356
+      },
+      "text": "body next. That is immoral. And I pledge to you When Congress passes a bill to put back in place the protections of Roe v. Wade, as President of the United States, I will proudly sign it into law. But understand, if Donald Trump were to be re-elected, he will sign a national abortion ban.",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.6,
+        "emotion_tone": "angry",
+        "segment_kind": "policy_claim",
+        "stance_target": "Roe v. Wade",
+        "stance_direction": "pro",
+        "political_leaning": "Left",
+        "claim_text": "I will proudly sign [a bill to put back in place the protections of Roe v. Wade] into law.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_12",
+      "speaker": "B",
+      "time": {
+        "start": 189.356,
+        "end": 231.536
+      },
+      "text": "It's a lie. I'm not signing a ban and there's no reason to sign a ban because we've gotten what everybody wanted. Democrats, Republicans and everybody else. And every legal scholar wanted it to be brought back into the states, and the states are voting, and it may take a little time, but for 52 years this issue has torn our country apart, and they've wanted it back in the states, and I did something that nobody thought was possible. The states are now voting. What she says is an absolute lie. And as far as the abortion ban, no, I'm not in favor of abortion ban, but it doesn't matter because this issue has now been taken over by the states.",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "2026 Nevada Question 6",
+            "url": "https://en.wikipedia.org/wiki/2026_Nevada_Question_6"
+          },
+          {
+            "title": "2024 Nebraska Initiative 434",
+            "url": "https://en.wikipedia.org/wiki/2024_Nebraska_Initiative_434"
+          }
+        ],
+        "verification_reasoning": "As of March 6, 2026, several U.S. states are in the process of voting on abortion-related measures. For instance, Nevada's Question 6, which seeks to enshrine the right to abortion up to fetal viability in the state constitution, is scheduled to appear on the ballot on November 3, 2026. ([en.wikipedia.org](https://en.wikipedia.org/wiki/2026_Nevada_Question_6?utm_source=openai)) Additionally, Nebraska's Initiative 434, aiming to prohibit abortions after the first trimester, was approved by voters on November 5, 2024. ([en.wikipedia.org](https://en.wikipedia.org/wiki/2024_Nebraska_Initiative_434?utm_source=openai)) Therefore, the claim that states are currently voting on abortion-related measures is accurate.",
+        "overall_misleading_index": 0.35,
+        "emotion_tone": "defensive",
+        "segment_kind": "policy_claim",
+        "stance_target": "abortion ban",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": "The states are now voting on the issue of abortion.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_14",
+      "speaker": "A",
+      "time": {
+        "start": 235.286,
+        "end": 254.58
+      },
+      "text": "I absolutely support reinstating the protections of Roe v. Wade. And as you rightly mentioned, nowhere in America. Is a woman carrying a pregnancy to term and asking for an abortion. That is not happening. It's insulting. To the women of America.",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.6,
+        "emotion_tone": "defensive",
+        "segment_kind": "policy_claim",
+        "stance_target": "Roe v. Wade",
+        "stance_direction": "pro",
+        "political_leaning": "Left",
+        "claim_text": "Nowhere in America is a woman carrying a pregnancy to term and asking for an abortion.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15",
+      "speaker": "B",
+      "time": {
+        "start": 254.93,
+        "end": 271.48
+      },
+      "text": "What we will do is we're looking at different plans. If we can come up with a plan that's going to cost our people, our population less money and be better health care than Obamacare, then I would absolutely do it. But until then, I'd run it as good as it can be run.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "policy_claim",
+        "stance_target": "Obamacare",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_16",
+      "speaker": "A",
+      "time": {
+        "start": 271.58,
+        "end": 273.83
+      },
+      "text": "So just a yes or no, you still do not have a plan.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_17",
+      "speaker": "B",
+      "time": {
+        "start": 273.93,
+        "end": 292.496
+      },
+      "text": "I have concepts of a plan. I'm not president right now. But if. We come up with something. I would only change it if we come up with something that's better and less expensive. And there are concepts and options we have to do that, and you'll be hearing about it in the not-too-distant future.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "policy_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_18",
+      "speaker": "A",
+      "time": {
+        "start": 292.896,
+        "end": 331.11
+      },
+      "text": "I'm going to actually do something really unusual and I'm going to invite you to attend one of Donald Trump's rallies because it's a really interesting thing to watch. You will see during the course of his rallies he talks about fictional characters like Hannibal Lecter. He will talk about windmills cause cancer. And what you will also notice is that people start leaving his rallies early out of exhaustion and boredom. And I will tell you the one thing you will not hear him talk about is you. You will not hear him talk about your needs, your dreams and your desires. And I'll tell you, I believe you deserve a president who actually puts you first and I pledge to you that I will.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.7,
+        "emotion_tone": "critical",
+        "segment_kind": "analysis",
+        "stance_target": "Donald Trump",
+        "stance_direction": "anti",
+        "political_leaning": "Left",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19",
+      "speaker": "B",
+      "time": {
+        "start": 331.31,
+        "end": 337.66
+      },
+      "text": "We have the biggest rallies, the most incredible rallies in the history of politics. That's because people want to take their country back.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.75,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Millions turn out for anti-Trump 'No Kings' rallies",
+            "url": "https://theweek.com/politics/no-kings-protests-trump"
+          },
+          {
+            "title": "March for Israel",
+            "url": "https://en.wikipedia.org/wiki/March_for_Israel"
+          }
+        ],
+        "verification_reasoning": "While the speaker's rallies may be large, they are not the largest in political history. For instance, the 'No Kings' protests on October 18, 2025, drew nearly 7 million participants across over 2,500 locations, making it one of the largest single-day protests in U.S. history. Additionally, the March for Israel in Washington, D.C., on November 14, 2023, attracted 290,000 attendees, marking it as the largest pro-Israel gathering in U.S. history. These examples indicate that the speaker's rallies are not the largest in political history.",
+        "overall_misleading_index": 0.725,
+        "emotion_tone": "enthusiastic",
+        "segment_kind": "values_statement",
+        "stance_target": "political rallies",
+        "stance_direction": "pro",
+        "political_leaning": "Right",
+        "claim_text": "We have the biggest rallies in the history of politics.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_20",
+      "speaker": "A",
+      "time": {
+        "start": 337.985,
+        "end": 356.637
+      },
+      "text": "Our country is being lost. We're a failing nation. In Springfield, they're eating the dogs. The people that came in, they're eating the cats. They're eating. They're eating the pets of the people that live there. And this is what's happening in our country. And it's a shame.",
+      "scores": {
+        "bias_score": 0.8,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.8,
+        "emotion_tone": "fear",
+        "segment_kind": "analysis",
+        "stance_target": "immigrants",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_21",
+      "speaker": "B",
+      "time": {
+        "start": 356.887,
+        "end": 370.837
+      },
+      "text": "I just want to clarify here, you bring up Springfield, Ohio, and ABC News did reach out to the city manager there. He told us there had been no credible reports of specific claims of pets being harmed, injured, or abused by individuals within the immigrant community.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": "immigrant community",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "The city manager of Springfield, Ohio stated that there had been no credible reports of specific claims of pets being harmed, injured, or abused by individuals within the immigrant community.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_22",
+      "speaker": "A",
+      "time": {
+        "start": 370.937,
+        "end": 383.817
+      },
+      "text": "Crime here is up and through the roof, despite their fraudulent statements that they made. Crime in this country is through the roof and we have a new form of crime It's called migrant crime and it's happening at levels that nobody thought possible",
+      "scores": {
+        "bias_score": 0.8,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "FBI Releases 2023 Crime in the Nation Statistics",
+            "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2023-crime-in-the-nation-statistics"
+          },
+          {
+            "title": "FBI Releases 2024 Reported Crimes in the Nation Statistics",
+            "url": "https://www.fbi.gov/contact-us/field-offices/cleveland/news/fbi-releases-2024-reported-crimes-in-the-nation-statistics"
+          }
+        ],
+        "verification_reasoning": "Recent FBI reports indicate a decline in both violent and property crime rates in the U.S. in 2023 and 2024. Specifically, violent crime decreased by 3% in 2023 and 4.5% in 2024, with significant reductions in murder, rape, robbery, and aggravated assault. Property crime also declined by 2% in 2023 and 8.1% in 2024. These trends suggest that the claim of a significant increase in crime rates is not supported by the available data.",
+        "overall_misleading_index": 0.45,
+        "emotion_tone": "fear",
+        "segment_kind": "analysis",
+        "stance_target": "migrant crime",
+        "stance_direction": "anti",
+        "political_leaning": "Right",
+        "claim_text": "Crime here is up and through the roof.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_23",
+      "speaker": "B",
+      "time": {
+        "start": 383.817,
+        "end": 388.417
+      },
+      "text": "President Trump, as you know, the FBI says overall violent crime is actually coming down in this country.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.95,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "FBI Releases 2023 Crime in the Nation Statistics",
+            "url": "https://www.fbi.gov/news/press-releases/fbi-releases-2023-crime-in-the-nation-statistics"
+          }
+        ],
+        "verification_reasoning": "The FBI's 2023 Crime in the Nation statistics indicate a 3% decrease in national violent crime compared to 2022. This aligns with the claim that the FBI reports a decrease in overall violent crime in the U.S. in 2023.",
+        "overall_misleading_index": 0.15,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": "President Trump",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "the FBI says overall violent crime is actually coming down in this country",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_30",
+      "speaker": "A",
+      "time": {
+        "start": 497.292,
+        "end": 506.042
+      },
+      "text": "Donald Trump was fired by 81 million people. So let's be clear about that. And clearly he is having a very difficult time processing that.",
+      "scores": {
+        "bias_score": 0.7,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.25,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "2020 United States presidential election",
+            "url": "https://en.wikipedia.org/wiki/2020_United_States_presidential_election"
+          }
+        ],
+        "verification_reasoning": "The claim that Donald Trump was 'fired' by 81 million people is a figurative expression referring to the 81 million votes cast for Joe Biden in the 2020 U.S. presidential election. While the term 'fired' is not a formal term in the U.S. electoral process, it is sometimes used colloquially to describe the outcome of an election where an incumbent president is not re-elected. In this case, Joe Biden received 81 million votes, the most ever cast for a presidential candidate, and won the Electoral College with 306 votes to Trump's 232, leading to Trump's removal from office. Therefore, the claim is supported by the election results, though the term 'fired' is not an official term in the electoral process. ([en.wikipedia.org](https://en.wikipedia.org/wiki/2020_United_States_presidential_election?utm_source=openai))",
+        "overall_misleading_index": 0.475,
+        "emotion_tone": "frustration",
+        "segment_kind": "analysis",
+        "stance_target": "Donald Trump",
+        "stance_direction": "anti",
+        "political_leaning": "Left",
+        "claim_text": "Donald Trump was fired by 81 million people.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    }
+  ]
+}

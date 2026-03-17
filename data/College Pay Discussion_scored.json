@@ -1,0 +1,1890 @@
+{
+  "meta": {
+    "input_file": "collegepay_transcript.json",
+    "created_local": "2026-03-10 16:05:03",
+    "score_version": "v1.0_universal_research_grade",
+    "content_type": "panel",
+    "routing_confidence": 0.9,
+    "routing_notes": "The discussion features multiple speakers (Jay Billis, Greg McIlroy, Joey Galloway) engaging in a back-and-forth conversation about college athletes' rights, education, and compensation, indicating a panel format.",
+    "runtime_sec": 45.609,
+    "settings": {
+      "MIN_WORDS_TO_SCORE": 8,
+      "MAX_SOURCES_PER_VERIFIED_SEGMENT": 2,
+      "PARALLEL_WORKERS": 6,
+      "WEB_VERIFICATION_ENABLED": true,
+      "MODEL_ROUTER": "gpt-4o-mini",
+      "MODEL_ANALYZE_1": "gpt-4o-mini",
+      "MODEL_ANALYZE_2": null,
+      "MODEL_VERIFY": "gpt-4o-mini",
+      "MODEL_AGREEMENT_ENABLED": false
+    },
+    "speakers_scored": [
+      "A",
+      "B",
+      "C"
+    ],
+    "speaker_roles": {
+      "A": {
+        "role": "journalist/analyst",
+        "confidence": 0.9,
+        "reason": "The speaker discusses the implications of name, image, and likeness (NIL) in college football, referencing specific institutions and their financial struggles, which aligns with the role of a journalist or analyst providing insights and context.",
+        "signals": {
+          "duration_sec": 1655.996,
+          "words": 1920
+        }
+      },
+      "B": {
+        "role": "candidate/debater",
+        "confidence": 0.95,
+        "reason": "The speaker is advocating for the economic rights of athletes, discussing the unfairness of NCAA restrictions, and emphasizing the importance of education for athletes, which aligns with the role of a candidate or debater in a panel discussion.",
+        "signals": {
+          "duration_sec": 2765.892,
+          "words": 1831
+        }
+      },
+      "C": {
+        "role": "commentator",
+        "confidence": 0.85,
+        "reason": "The speaker is providing an opinion on the relationship between education and athletics, discussing the complexities of the athletic administration and marketability without moderating the discussion or asking questions.",
+        "signals": {
+          "duration_sec": 106.248,
+          "words": 321
+        }
+      }
+    },
+    "speaker_selection_debug": {
+      "ranked_by_talk_time": [
+        "A",
+        "B",
+        "C"
+      ],
+      "fallback_applied": false,
+      "fallback_reason": "Panel: included all substantive speakers."
+    },
+    "transcribe_meta": {
+      "audio_file": "collegepay.mp3",
+      "created_local": "2026-03-10 16:04:17",
+      "model": "gpt-4o-transcribe-diarize",
+      "transcribe_version": "v5_universal_consolidated",
+      "segments_out": 25
+    }
+  },
+  "definitions": {
+    "fakeness_score": "Probability-like truth-risk that a statement is false or misleading, based on verification of factual accuracy and claim reliability using web sources. 0–1. Null if verification did not run or no checkable claim exists.",
+    "bias_score": "Degree of linguistic/ideological bias in phrasing, framing, exaggeration, loaded language, or manipulative rhetoric. 0–1. This is NOT about factual truth.",
+    "political_leaning": "Classification of overall political orientation in the segment (Left, Right, Neutral, Not Applicable).",
+    "emotion_tone": "Dominant emotional tone expressed (categorical label, e.g., calm, angry, fearful, sarcastic, critical).",
+    "overall_misleading_index": "Composite measure summarizing misleadingness. If fakeness_score exists: average(bias_score, fakeness_score). Else: equals bias_score.",
+    "model_agreement_score": "Agreement between two independent model scoring passes (0–1). Reported when a second analysis model is enabled. Computed from similarity of bias scores and categorical matches (leaning/kind).",
+    "analysis_confidence": "Confidence (0–1) in NON-verification outputs: bias_score, emotion_tone, segment_kind, stance fields, political_leaning.",
+    "fakeness_confidence": "Confidence (0–1) in verification result ONLY. Present only when fakeness_score exists.",
+    "verification_verdict": "One of: supported, contradicted, mixed, insufficient. Only present if verification ran.",
+    "segment_kind": "One of: factual_claim, policy_claim, values_statement, question, personal_attack, analysis, descriptive, other.",
+    "stance_target": "Entity/issue being discussed (string) or null if unclear.",
+    "stance_direction": "One of: pro, anti, neutral/unclear (relative to stance_target).",
+    "sources": "Verification sources used for fakeness_score (hard-capped by MAX_SOURCES_PER_VERIFIED_SEGMENT).",
+    "speaker_roles": "Per-speaker inferred role: candidate/debater, moderator/host, journalist/analyst, commentator, audience, narrator, other.",
+    "speaker_selection": "Speakers to score are selected automatically. Moderators/hosts/journalists/audience/narrator are excluded from scoring. Debate content requires at least 2 substantive debaters; fallback selects top talk-time speakers if needed."
+  },
+  "summary": {
+    "global": {
+      "avg_bias": 0.296,
+      "avg_fakeness": 0.308,
+      "avg_overall_misleading_index": 0.296,
+      "segments_scored": 57,
+      "segments_verified": 6,
+      "model_agreement_score": null
+    },
+    "per_speaker": {
+      "A": {
+        "role": "journalist/analyst",
+        "role_confidence": 0.9,
+        "segments": 21,
+        "avg_bias": 0.286,
+        "avg_fakeness": 0.7,
+        "avg_overall_misleading_index": 0.295,
+        "avg_model_agreement_score": null
+      },
+      "B": {
+        "role": "candidate/debater",
+        "role_confidence": 0.95,
+        "segments": 31,
+        "avg_bias": 0.313,
+        "avg_fakeness": 0.263,
+        "avg_overall_misleading_index": 0.309,
+        "avg_model_agreement_score": null
+      },
+      "C": {
+        "role": "commentator",
+        "role_confidence": 0.85,
+        "segments": 5,
+        "avg_bias": 0.24,
+        "avg_fakeness": 0.1,
+        "avg_overall_misleading_index": 0.22,
+        "avg_model_agreement_score": null
+      }
+    }
+  },
+  "segments": [
+    {
+      "segment_id": "seg_0",
+      "speaker": "A",
+      "time": {
+        "start": 1.268,
+        "end": 41.002
+      },
+      "text": "The voice of the player during this offseason in college football has been evident. Even look to the Pac-12 and the document that the Pac-12 players put together that called perhaps even for revenue sharing between conferences and college football players. Joining me now to discuss what the future would look like as it pertains to pay for play for college athletes, my colleagues Jay Billis, Greg McIlroy, and Joey Galloway. Jay, we've already been well down the road in terms of name, image, and likeness. Both on a governmental level and also with players pushing for it, is name image and likeness enough, an unfettered limitation on name image and likeness enough to make this an equitable situation for college athletes?",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": "college athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part3",
+      "speaker": "B",
+      "time": {
+        "start": 43.092,
+        "end": 107.056
+      },
+      "text": "And it's the athlete that bears every sacrifice. So no matter what the excuse, and they are excuses that the NCAA and all the member institutions bring up, it's always that the athlete has to make the sacrifice. Competitive balance, the athlete has to make the sacrifice.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "frustration",
+        "segment_kind": "values_statement",
+        "stance_target": "NCAA and member institutions",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part0",
+      "speaker": "B",
+      "time": {
+        "start": 43.092,
+        "end": 107.056
+      },
+      "text": "Equitable, no. It's a step in the right direction. I mean, really, Reece, this is a question of economic rights for athletes.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "neutral",
+        "segment_kind": "values_statement",
+        "stance_target": "economic rights for athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Left",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part4",
+      "speaker": "B",
+      "time": {
+        "start": 43.092,
+        "end": 107.056
+      },
+      "text": "Having a full complement of sports, the athlete has to make the sacrifice. to make the sacrifice. So I've never felt it was fair or right and in fact in a multi-billion dollar business when the athletes are the only ones limited I find that profoundly wrong to the point of being immoral.",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.6,
+        "emotion_tone": "frustration",
+        "segment_kind": "values_statement",
+        "stance_target": "athletes' limitations in sports",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part2",
+      "speaker": "B",
+      "time": {
+        "start": 43.092,
+        "end": 107.056
+      },
+      "text": "Other students that aren't athletes get scholarships and stipends and the like. And yet they're not told what they can earn or accept. So really the issue is the amateurism restriction that the NCAA places on athletes only.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.95,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Amateurism - NCAA.org",
+            "url": "https://www.ncaa.org/sports/2014/10/6/amateurism.aspx"
+          },
+          {
+            "title": "NCAA approves policy allowing athletes to profit off name, image, likeness",
+            "url": "https://www.axios.com/2021/06/30/ncaa-approves-interim-policy-nil"
+          }
+        ],
+        "verification_reasoning": "The NCAA has historically enforced amateurism rules that restrict athletes from receiving compensation beyond scholarships and certain educational benefits. These rules have been subject to legal challenges and reforms over time, but the core principle of amateurism remains a significant aspect of NCAA regulations.",
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "NCAA",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "The NCAA places amateurism restrictions on athletes.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_1_part1",
+      "speaker": "B",
+      "time": {
+        "start": 43.092,
+        "end": 107.056
+      },
+      "text": "And really all the athletes are asking for is the same economic rights as literally everyone else gets in this multi-billion dollar business. And it's not just every other employee. It's also every other student that is a non-athlete.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "assertive",
+        "segment_kind": "values_statement",
+        "stance_target": "athletes' economic rights",
+        "stance_direction": "pro",
+        "political_leaning": "Left",
+        "claim_text": "Athletes are asking for the same economic rights as every other employee and every other student that is a non-athlete.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_2",
+      "speaker": "A",
+      "time": {
+        "start": 109.492,
+        "end": 135.442
+      },
+      "text": "NILJ, though, is I think an opportunity to at least get it to a point where it is somewhat equitable. You are essentially being put into a free market environment. You'll be paid based on how much your name, image, and likeness might potentially move the needle, wherever it may be, whether it's nationally, locally, or at the most micro level. Jay, the problem that I have, if there's one thing that we've recognized, you just used the term...",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "NILJ",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_3",
+      "speaker": "C",
+      "time": {
+        "start": 135.444,
+        "end": 156.544
+      },
+      "text": "multi-billion I feel like we hear that term a lot multi-billion dollar industry if there's anything that we've learned doing this just hellacious coronavirus pandemic is just how fickle and how much this entire athletic administration that each and every one of these schools is a bit of a house of cards if in fact we don't have a football",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "frustration",
+        "segment_kind": "analysis",
+        "stance_target": "athletic administration",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_4",
+      "speaker": "A",
+      "time": {
+        "start": 157.031,
+        "end": 189.847
+      },
+      "text": "season perhaps in the Big Ten we're already seeing schools that are canceling an abundance of non-revenue and Olympic-based sports we've already seen it happen at Iowa we've seen it happen at Stanford two schools that have been remarkably profitable over the last few years so we act as though these schools are just pocketing money hand over fist I just don't think it's the case if anything I think a lot of these schools are really struggling financially and if one thing just one little aspect Seems to go a little bit awry, then they won't be able to support the programs that they currently have and the scholarships they're currently offering.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "concern",
+        "segment_kind": "analysis",
+        "stance_target": "Big Ten schools",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "Iowa and Stanford have canceled non-revenue and Olympic-based sports.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_5_part1",
+      "speaker": "B",
+      "time": {
+        "start": 192.379,
+        "end": 288.857
+      },
+      "text": "And so I'm going to assume, I don't know for a fact, but I'm going to assume that the four people in this discussion have their degree. And because of we believe that getting that degree in school was very important, it has opened up many doors for us outside of playing a sport. And so when I hear about athletes getting paid and what they deserve, my main concern is if their ability to get paid, whether it's name, image and likeness, whether it's profit sharing, whatever that may be, that takes their time and their energy and focuses it somewhere else.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "athletes getting paid",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_5_part2",
+      "speaker": "B",
+      "time": {
+        "start": 192.379,
+        "end": 288.857
+      },
+      "text": "I hope that it does not get in the way and take place of their focus and their belief that getting their degree is the most important thing that they will do when they go to school. And so if they have an opportunity to go make $10,000, $20,000, $30,000 and that gets in the way of going to class, it's not worth it at all because that money will be gone without the education to back it to know what to do with that money. So that is my concern in this conversation that we just get sidetracked and just start talking about their ability to earn money and not talk about the education that they should be getting and focused on.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "concerned",
+        "segment_kind": "values_statement",
+        "stance_target": "students' focus on education",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_5_part0",
+      "speaker": "B",
+      "time": {
+        "start": 192.379,
+        "end": 288.857
+      },
+      "text": "Greg, I agree with you. And my concern in all of this conversation is I don't want these athletes to lose sight of getting their degree because that is absolutely the most important part of them going to school. When you look at the percentages of how many of these kids will go on to play a pro sport, it's very small.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "concerned",
+        "segment_kind": "analysis",
+        "stance_target": "athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "the percentages of how many of these kids will go on to play a pro sport is very small",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_6",
+      "speaker": "C",
+      "time": {
+        "start": 288.857,
+        "end": 313.783
+      },
+      "text": "I don't think anybody is going to come down and say that education is wrong or that that's not the most worthy pursuit. I think the question, though, comes back to why. Why do we decide that these things are mutually exclusive, that they can't pursue their education while still capitalizing on their marketability? And as it pertains to how money is spent within athletic departments, there are federal guidelines that they have to adhere to in terms of equality.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Equal Employment Opportunity Act of 1972",
+            "url": "https://en.wikipedia.org/wiki/Equal_Employment_Opportunity_Act_of_1972"
+          },
+          {
+            "title": "Equal Educational Opportunities Act of 1974",
+            "url": "https://en.wikipedia.org/wiki/Equal_Educational_Opportunities_Act_of_1974"
+          }
+        ],
+        "verification_reasoning": "The United States has established numerous federal guidelines and laws to promote equality across various sectors. For instance, the Equal Employment Opportunity Act of 1972 prohibits employment discrimination based on race, color, national origin, sex, religion, age, disability, and marital or familial status. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Equal_Employment_Opportunity_Act_of_1972?utm_source=openai)) Additionally, the Equal Educational Opportunities Act of 1974 mandates that no state can deny equal educational opportunity on the basis of gender, race, color, or nationality. ([en.wikipedia.org](https://en.wikipedia.org/wiki/Equal_Educational_Opportunities_Act_of_1974?utm_source=openai)) Furthermore, the Department of Justice has updated its regulations under Title VI of the Civil Rights Act of 1964 to eliminate disparate-impact liability, ensuring equal treatment under the law. ([justice.gov](https://www.justice.gov/opa/pr/department-justice-rule-restores-equal-protection-all-civil-rights-enforcement?utm_source=openai)) These examples demonstrate the existence of federal guidelines that enforce equality in the United States.",
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "education and athletics",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "there are federal guidelines that they have to adhere to in terms of equality",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_7",
+      "speaker": "A",
+      "time": {
+        "start": 314.061,
+        "end": 328.411
+      },
+      "text": "under Title IX. There are other constraints as it pertains to not necessarily turning a profit like you would for shareholders that makes it a little bit different. Jay, do you agree with my assessment? I don't see why these are mutually exclusive. You have to have one or the other.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part2",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "It doesn't mean that certain segments of the airline industry shouldn't be paid because the airline industry is in trouble. And what that points up, sort of that, what I would call that excuse points up is the only one having to make a sacrifice is the athlete. Nobody's asking that other people don't get paid or have their pay limited because we're dealing with that, this pandemic, or we're dealing with other types of problems.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "frustration",
+        "segment_kind": "analysis",
+        "stance_target": "airline industry",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part4",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "a better person, a better student, a better athlete doesn't provide anything. It just limits you. And to Joey's point, look, nobody's saying education is not important, but we could say the same thing about athletes doing a photo shoot for the school or any number of things that they're doing for the school.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "education and athletics",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part3",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "It's always the athlete that's the only one. And amateurism does not provide anything to the athlete. Amateurism doesn't make you a better player.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "critical",
+        "segment_kind": "values_statement",
+        "stance_target": "amateurism",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part0",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "No, that's exactly right. Money and education are not mutually exclusive. And respectfully, I think what we've heard, both Joey and Greg, interesting points, but I would refer to those as excuses that this is a multi-billion dollar business.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Source",
+            "url": "https://europeantech.news/amazon-going-all-in-on-generative-ai-as-multi-billion-dollar-business-amzn/?utm_source=openai"
+          },
+          {
+            "title": "Source",
+            "url": "https://en.wikipedia.org/wiki/List_of_largest_technology_companies_by_revenue?utm_source=openai"
+          }
+        ],
+        "verification_reasoning": "The term 'multi-billion dollar business' is commonly used to describe companies with revenues or valuations in the billions of dollars. For instance, Amazon's generative AI business was reported to have a multi-billion dollar revenue run rate as of April 2024. ([europeantech.news](https://europeantech.news/amazon-going-all-in-on-generative-ai-as-multi-billion-dollar-business-amzn/?utm_source=openai)) Additionally, major corporations like Apple and Microsoft have market capitalizations exceeding $1 trillion, indicating their status as multi-billion dollar enterprises. ([en.wikipedia.org](https://en.wikipedia.org/wiki/List_of_largest_technology_companies_by_revenue?utm_source=openai)) Therefore, the claim that the business is a multi-billion dollar enterprise is plausible and supported by examples of similar companies.",
+        "overall_misleading_index": 0.25,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "Joey and Greg",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "this is a multi-billion dollar business",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part1",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "College sports rakes in about $15 billion a year. And the idea somehow that it all teeters because of the pandemic, like the airline industry is in trouble. That doesn't mean.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": "college sports",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "College sports rakes in about $15 billion a year.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_8_part5",
+      "speaker": "B",
+      "time": {
+        "start": 330.081,
+        "end": 448.229
+      },
+      "text": "It takes their attention away from education, like money and education are not mutually exclusive. If what these are are issues for individual schools to deal with. with so Joey went to Ohio if Ohio State doesn't want their athletes doing commercials they can say listen we don't do that here and then see how it works out in the marketplace and if one school doesn't want to pay or wants to pay less than other schools then that's fine the marketplace will sort it out but the idea that the athlete gets zero except for expenses because we have to pay for these other things and because Iowa went from 24 sports to 20 and Stanford went from 36 sports down to 20 25 and they were cutting those 11 whether the pandemic hit or not that should have no bearing on the athletes economic rights that's an individual school choice",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "athletes' economic rights",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "Iowa went from 24 sports to 20 and Stanford went from 36 sports down to 25.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_9",
+      "speaker": "C",
+      "time": {
+        "start": 451.809,
+        "end": 470.459
+      },
+      "text": "The reason I say that they, not say, but the reason it sounds like they're mutually exclusive is because in our conversations, I don't hear Jay Billis lead with the education is the most important part. I don't hear Reese Davis as we're having this conversation and having this discussion.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "Jay Billis and Reese Davis",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_10_part1",
+      "speaker": "A",
+      "time": {
+        "start": 471.092,
+        "end": 581.012
+      },
+      "text": "I'm talking. long road and that's why so many athletes end up broke at the end of the day because the eyeball is seeing money without seeing the education to handle that money and you're absolutely right they can do both I just want to hear us tell them that they should do both",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "concerned",
+        "segment_kind": "analysis",
+        "stance_target": "athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_10_part0",
+      "speaker": "A",
+      "time": {
+        "start": 471.092,
+        "end": 581.012
+      },
+      "text": "We won't discuss education at all and here is my concern I can agree with everything you guys say but what I worry about is when we're talking about these young people and they're listening to these conversations and they don't hear Jay Billis say that the education is more important they don't hear Reese Davis say or Greg McIlroy say how important that education is and all they hear is us talk about how important their ability is to get a slice of the pie that is made by the NCAA or made by these schools. The conversation then leads them to ignore. the most important part of this and so no I do believe that you can do both I get concerned when I listen to the conversations that don't address both because if I'm a young man and I'm sitting in my on my couch in college or in high school thinking about going to college and I listen to these conversations we have All I'm thinking about is how important it is and how can I get a slice of the pie of the money and when you say they get zero That says to me that, hey, the opportunity, the help, the tutors, whatever it is these schools provide, the push in that direction to get that education to me is way more valuable than their ability to go do a photo shoot, their ability to go sign an autograph somewhere, because in the long run, I'm not talking about four or five years down the road when that $50,000 they might earn can help them.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "concerned",
+        "segment_kind": "analysis",
+        "stance_target": "NCAA and schools",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "the education is more important",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_11_part0",
+      "speaker": "B",
+      "time": {
+        "start": 583.336,
+        "end": 627.95
+      },
+      "text": "Joey I'm going to take a little bit of what you're saying and apply a little bit of what Jay's saying and see if we can somehow find a resolution because if there's one thing I've noticed when we get to this topic is no one ever seems to offer any way to make it feasibly happen. I feel like well you're either anti-pay player or you're in favor of paying the player. I think there is a way to actually use paying the player and the NIL that is inevitable.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "paying players",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_11_part1",
+      "speaker": "B",
+      "time": {
+        "start": 583.336,
+        "end": 627.95
+      },
+      "text": "I agree with Jay amateurism is a is a farce it's something that's dated and it's going away and it's likely going away as soon as 2021 so we might as well just concede defeat in that regard nil is coming but is there room to potentially pay them more i don't know i'd love to explore that possibility but if we're going",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.75,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "NCAA approves policy allowing athletes to profit off name, image, likeness",
+            "url": "https://www.axios.com/2021/06/30/ncaa-approves-interim-policy-nil"
+          },
+          {
+            "title": "NCAA and major conferences agree to $2.8 billion settlement, allowing direct payments to athletes",
+            "url": "https://apnews.com/article/b6ff58d62f93359789dde1626f827bf1"
+          }
+        ],
+        "verification_reasoning": "While significant changes to amateurism in college sports began in 2021, such as the NCAA allowing athletes to profit from their name, image, and likeness (NIL) starting July 1, 2021 ([axios.com](https://www.axios.com/2021/06/30/ncaa-approves-interim-policy-nil?utm_source=openai)), the complete end of amateurism occurred later. In 2024, the NCAA and major conferences agreed to a $2.8 billion settlement, allowing direct payments to athletes, marking the full shift to a professional model ([apnews.com](https://apnews.com/article/b6ff58d62f93359789dde1626f827bf1?utm_source=openai)). Therefore, the claim that amateurism ended in 2021 is inaccurate; it concluded in 2024.",
+        "overall_misleading_index": 0.575,
+        "emotion_tone": "frustration",
+        "segment_kind": "values_statement",
+        "stance_target": "amateurism in sports",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": "amateurism is going away as soon as 2021",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_12_part0",
+      "speaker": "A",
+      "time": {
+        "start": 628.123,
+        "end": 720.465
+      },
+      "text": "to do it let's do it in a way that can we we can make it educational let's teach the guys in the players about paying taxes let's teach the players about long-term savings and how it can affect your well-being way down the road let's teach them about 401k let's teach them about minimum wage let's teach them about compounding interest all these things can be applied to where not only they're getting a little bit of a piece of the pie and by the way I think it's gonna be a minuscule piece of the pie I don't think anyone Everyone is going to get rich playing college football outside of maybe one, two, potentially at most three guys nationally. If it were to go on this year, I think there's only three guys that would have enough probably marketability to move the needle. Justin Fields and Trevor Lawrence would probably be the two that would naturally probably draw the biggest eyeballs.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": 0.7,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Justin Fields and Trevor Lawrence: NFL's Rising Stars",
+            "url": "https://www.nfl.com/news/justin-fields-trevor-lawrence-nfl-rising-stars-2023"
+          }
+        ],
+        "verification_reasoning": "Justin Fields and Trevor Lawrence are among the most popular NFL quarterbacks in 2023, with both players drawing significant attention due to their performances and potential. However, the claim's phrasing suggests a subjective opinion, making it difficult to definitively verify. Therefore, while the claim is plausible, it cannot be conclusively proven true or false.",
+        "overall_misleading_index": 0.5,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "college football players",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "Justin Fields and Trevor Lawrence would probably be the two that would naturally probably draw the biggest eyeballs.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_12_part1",
+      "speaker": "A",
+      "time": {
+        "start": 628.123,
+        "end": 720.465
+      },
+      "text": "But all in all, guys, I just think that there is way too much divisiveness on this topic. There is a way that we can maybe somehow... somehow come together and if these guys are going to make I've always suggested if we're going to do it maybe we just pay them minimum wage or we pay them double minimum wage maybe 10 12 15 20 dollars an hour while you're at the facility 20 hours a week during the season that's 400 extra a week that these kids could potentially use towards some expenses that they might have either back at home or within their their college experience so I think there are ways to both use the educational aspect of earning money and at the same time finding an opportunity to create more wealth and maybe more opportunities for these people to create value for themselves.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "neutral",
+        "segment_kind": "policy_claim",
+        "stance_target": "student athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "we just pay them minimum wage or we pay them double minimum wage maybe 10 12 15 20 dollars an hour",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13_part0",
+      "speaker": "B",
+      "time": {
+        "start": 720.665,
+        "end": 784.809
+      },
+      "text": "Okay, I agree with the education. Nobody's going to argue that those are all really good ideas. And Joey, to your point, I absolutely believe education is the most important thing.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "positive",
+        "segment_kind": "values_statement",
+        "stance_target": "education",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13_part1",
+      "speaker": "B",
+      "time": {
+        "start": 720.665,
+        "end": 784.809
+      },
+      "text": "But this is also, Greg brings up a great point about how do we do it. do it next, because you have to be careful what you wish for. Anyone who says that the players as a whole don't get anything, I don't think that's completely accurate.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "players",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13_part3",
+      "speaker": "B",
+      "time": {
+        "start": 720.665,
+        "end": 784.809
+      },
+      "text": "Not in addition to all the other amenities that they get. That said, the question is not so much about limiting them. It's about the wisdom of making them employees, which I think is not the right move.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "employees",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13_part4",
+      "speaker": "B",
+      "time": {
+        "start": 720.665,
+        "end": 784.809
+      },
+      "text": "I think it would be more harmful than good. And the other is, I think, to get back to Jay's primary point, is you're putting artificial limitations on a group of people that.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "caution",
+        "segment_kind": "values_statement",
+        "stance_target": null,
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_13_part2",
+      "speaker": "B",
+      "time": {
+        "start": 720.665,
+        "end": 784.809
+      },
+      "text": "I've talked to a number of athletic directors across the country to get a feel for how this works. Basically, if a player qualifies for a Pell Grant, full cost of attendance, perhaps the off-campus stipend depending on what he does with it, there are situations where guys can have $20,000 to $30,000 that they're getting from this. So it's not...",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "factual_claim",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "$20,000 to $30,000 that they're getting from this.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_14",
+      "speaker": "A",
+      "time": {
+        "start": 785.154,
+        "end": 789.054
+      },
+      "text": "No one else has to operate under. Is that fair, Jake?",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part0",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "That's exactly right. And look, the players don't have to be made into employees. The idea that if they're paid by the school, they're employees is really kind of ludicrous.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "players",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part1",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "Schools put on games all the time. So at those games, they have people that sell concessions and parking and do all the they have ushers. They're not all employees of that university.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "descriptive",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part2",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "They get paid for performing a service and athletes could do the same thing. Now, to an earlier point about athletes who. to go bankrupt.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part4",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "And the idea that somehow we're protecting athletes by not paying them, I find that kind of absurd, frankly. Look, in this country, we have tied a college education, and if you are an athlete, your pursuit of your passion, we've tied that to some sort of amateur ideal. that frankly we don't support in any way shape or form for anyone else there are countless other students that are getting full scholarships and stipends and are able to work in their chosen field while they're in school and make as much money as they can and nobody's worried about hey wait a minute what is this doing to your education to the point that we try to stop it we only do that with athletes the free market is the best way to deal with this you know you know how you learn about taxes and about taking care of money and all that that it's by having money and it's odd when when I think the the literati of the college sports space is telling athletes, listen, you can't handle that.",
+      "scores": {
+        "bias_score": 0.6,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.6,
+        "emotion_tone": "frustrated",
+        "segment_kind": "analysis",
+        "stance_target": "college athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Left",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part5",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "You need to keep your eye on the ball. The most important thing is education. I know education is important.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "values_statement",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part6",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "I graduated college and law school. I understand it's important, but I also see a multi-billion dollar business where the only people, the only class of person that is limited to their expenses only. and told they get enough is an athlete.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "athletes",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part7",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "Everyone else can get whatever their talents can earn in the marketplace, their fair market value, and to deny it only to athletes while everybody else is making what they can, I think is wrong.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "discontent",
+        "segment_kind": "values_statement",
+        "stance_target": "athletes' earnings",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_15_part3",
+      "speaker": "B",
+      "time": {
+        "start": 791.35,
+        "end": 916.844
+      },
+      "text": "Look, I practiced in bankruptcy court as a lawyer for a long time, and I never saw an athlete in there. A lot of people go bankrupt. It's not just athletes.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.9,
+        "fakeness_score": 0.1,
+        "fakeness_confidence": 0.9,
+        "verification_verdict": "continuous",
+        "sources": [
+          {
+            "title": "Bankruptcy Filings Rise 16.2 Percent",
+            "url": "https://www.uscourts.gov/data-news/judiciary-news/2024/11/07/bankruptcy-filings-rise-162-percent"
+          },
+          {
+            "title": "Bankruptcy Rates Among NFL Players with Short-Lived Income Spikes",
+            "url": "https://www.nber.org/papers/w21085"
+          }
+        ],
+        "verification_reasoning": "The claim is supported by data indicating that bankruptcy is prevalent among the general population. In 2024, there were 504,112 bankruptcy filings in the United States, with non-business (personal) filings accounting for 481,350 cases. ([uscourts.gov](https://www.uscourts.gov/data-news/judiciary-news/2024/11/07/bankruptcy-filings-rise-162-percent?utm_source=openai)) This suggests that bankruptcy affects a significant portion of the population beyond athletes. While professional athletes are known to face financial challenges, such as a study indicating that 15.7% of NFL players filed for bankruptcy within 12 years of retirement, ([nber.org](https://www.nber.org/papers/w21085?utm_source=openai)) the overall incidence of bankruptcy among the general public is higher, indicating that financial difficulties leading to bankruptcy are not exclusive to athletes. Therefore, the claim is accurate and well-supported by available data.",
+        "overall_misleading_index": 0.15,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "A lot of people go bankrupt. It's not just athletes.",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_16",
+      "speaker": "C",
+      "time": {
+        "start": 919.844,
+        "end": 941.566
+      },
+      "text": "I understand all the points and I understand what you're saying about finding ways to get these athletes money but once again I just don't understand the short-sighted part of that that is almost like yeah I understand that education is important also as you're sitting there and you're a lawyer and you know and so you understood the importance of the education",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "confused",
+        "segment_kind": "analysis",
+        "stance_target": "athletes' compensation",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_17_part0",
+      "speaker": "A",
+      "time": {
+        "start": 942.184,
+        "end": 1070.996
+      },
+      "text": "When you were in school, and honestly, it has opened so many doors for you so that if you weren't calling games or on ESPN, you have a whole nother career that is, you know, there and it's lucrative and you can do whatever you want with that. Now, I am not saying for one second that you are saying that they should not get the education. What I am saying is when I hear a lot of us talk and Jay, you're one of these.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": "education",
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_17_part2",
+      "speaker": "A",
+      "time": {
+        "start": 942.184,
+        "end": 1070.996
+      },
+      "text": "I would love to hear those same four say, get your degree while getting money. And you're right, Reese, you can do both. I just want to hear us talk about both so that when they hear it, they understand that we are saying it is the most important part.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "neutral",
+        "segment_kind": "values_statement",
+        "stance_target": null,
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_17_part1",
+      "speaker": "A",
+      "time": {
+        "start": 942.184,
+        "end": 1070.996
+      },
+      "text": "these people that I do hear talk I don't hear you say that the education is important and it is not just let's not make it sound like for one second that we talk about this education that they are opening up the door and say hey guys go in there and get you one no no there are tutors they will walk you to class they make sure you're in class things that I don't see the normal student get they go above and beyond to make sure that they do everything they possibly can to help these young men get that education much more than I've seen in regular students you're absolutely right regular students go get a job regular students do get they do also get you know benefits and scholarships and I've said this before the things that athletes get that either is in training because the training that I received while at Ohio State was better than any other training I received in my my entire career, the 16 years in the NFL. So that's also a benefit. All I'm saying is this, when we have this conversation for people that have their degrees.",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "defensive",
+        "segment_kind": "analysis",
+        "stance_target": "education for athletes",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": "the training that I received while at Ohio State was better than any other training I received in my entire career",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_17_part3",
+      "speaker": "A",
+      "time": {
+        "start": 942.184,
+        "end": 1070.996
+      },
+      "text": "And it doesn't matter if that thing is 10,000, 40,000, 50,000. We all know whether you've seen a lot of people who are bankrupt who weren't athletes. athletes or seen a lot of athletes we all know that that money is short-lived that degree has a much longer lifespan",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": "money is short-lived for athletes",
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_18",
+      "speaker": "B",
+      "time": {
+        "start": 1073.5,
+        "end": 1098.95
+      },
+      "text": "Yeah, I completely agree with everything you said, Joey. My one pushback, and I think to both of you guys, I just remember my college experience so vividly and was so fortunate to be a part of a national championship organization at Alabama in 2009 and had guys that went on to make millions upon millions of dollars, guys that are likely going to end up in the Hall of Fame, potentially the Pro Football Hall of Fame with nine figures and several commas.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "nostalgic",
+        "segment_kind": "personal_attack",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part0",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "in their bank accounts and I'll tell you this we all get together and we all will come together had a reunion just last year our 10-year reunion of our national championship it didn't matter if you were the lowest level walk-on and or you were Julio Jones everyone when we were in college felt the exact same and there's something that was really special about that at any time I think any of us that have been in a professional locker room or have been in a locker room where finances This is our a topic of conversation. That experience is jaded. And I do worry about the unintended consequences of ruining a college experience by trying to provide these guys with a little bit extra money.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "nostalgic",
+        "segment_kind": "analysis",
+        "stance_target": "college athletes",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part2",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "But I do worry about there being jealousy. I do worry about you looking to the guy next to you in the locker room on either side and saying, well, I didn't get as much money as him for that appearance. I didn't get as much money as him for that appearance.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "concern",
+        "segment_kind": "values_statement",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part1",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "And that's, I think, a very reasonable ask because if there's a situation even with NIL, and I think NIL, like I said, is inevitable and I support it and I'm fully in favor of these guys using their name, image and likeness to create. create opportunities for themselves. Totally support that.",
+      "scores": {
+        "bias_score": 0.2,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.2,
+        "emotion_tone": "supportive",
+        "segment_kind": "values_statement",
+        "stance_target": "NIL (Name, Image, Likeness)",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part3",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "And I think that will have a negative impact on a kid's college experience. I really do. Now, is that up to me?",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "concerned",
+        "segment_kind": "analysis",
+        "stance_target": "kid's college experience",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part4",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "Should it be up to me? No, which is why ultimately I support the NIL. But I do worry a little bit, Jay and Joey and Reese, you've been around enough.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "concern",
+        "segment_kind": "question",
+        "stance_target": "NIL",
+        "stance_direction": "pro",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_19_part5",
+      "speaker": "A",
+      "time": {
+        "start": 1099.299,
+        "end": 1198.053
+      },
+      "text": "found enough locker rooms about how this could have a negative impact on just the chemistry that you might have with some of your teammates because when you're in a locker room right now everyone's the same but if we start to invite NIL and other aspects of pay for play then it could change the the dynamics significantly for these guys that are going through their experience",
+      "scores": {
+        "bias_score": 0.4,
+        "analysis_confidence": 0.7,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.4,
+        "emotion_tone": "concern",
+        "segment_kind": "analysis",
+        "stance_target": "NIL and pay for play",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_21",
+      "speaker": "A",
+      "time": {
+        "start": 1199.553,
+        "end": 1205.503
+      },
+      "text": "is that why you guys all played the same amount of snaps at Alabama Greg that you guys all played the same number of",
+      "scores": {
+        "bias_score": 0.0,
+        "analysis_confidence": 0.9,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.0,
+        "emotion_tone": "neutral",
+        "segment_kind": "question",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_22",
+      "speaker": "B",
+      "time": {
+        "start": 1205.347,
+        "end": 1212.497
+      },
+      "text": "number of plays because you didn't want anybody to have more than another at the walk-on quarterback played just as many snaps as you did in 2009.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "neutral",
+        "segment_kind": "analysis",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_23",
+      "speaker": "A",
+      "time": {
+        "start": 1214.403,
+        "end": 1235.403
+      },
+      "text": "Well, I'd still am profiting significantly more for having played at Alabama than Alabama ever profited for me. And I was a part of a national championship team. So I look at the value as being time accrued over the course of time and compounded annually, Jay, which I know you completely understand having played it at the wonderful institution that is Duke.",
+      "scores": {
+        "bias_score": 0.3,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.3,
+        "emotion_tone": "defensive",
+        "segment_kind": "values_statement",
+        "stance_target": "Alabama",
+        "stance_direction": "anti",
+        "political_leaning": "Neutral",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    },
+    {
+      "segment_id": "seg_24",
+      "speaker": "C",
+      "time": {
+        "start": 1236.099,
+        "end": 1255.949
+      },
+      "text": "But the one thing I would say, a great perspective from everybody, but as it pertains to the jealousy, in the immortal words of the great American philosopher Jerry Seinfeld, I'm jealous of everybody. Thanks for watching ESPN on YouTube. For live streaming sports and premium content, subscribe to ESPN+.",
+      "scores": {
+        "bias_score": 0.1,
+        "analysis_confidence": 0.8,
+        "fakeness_score": null,
+        "fakeness_confidence": null,
+        "verification_verdict": null,
+        "sources": [],
+        "verification_reasoning": null,
+        "overall_misleading_index": 0.1,
+        "emotion_tone": "light-hearted",
+        "segment_kind": "other",
+        "stance_target": null,
+        "stance_direction": "neutral/unclear",
+        "political_leaning": "Not Applicable",
+        "claim_text": null,
+        "model_agreement_score": null
+      },
+      "debug": {
+        "analysis_model_1": "gpt-4o-mini",
+        "analysis_model_2": null
+      }
+    }
+  ]
+}
