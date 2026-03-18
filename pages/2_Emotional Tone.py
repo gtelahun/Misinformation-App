@@ -31,8 +31,6 @@ if "selected_file" not in st.session_state or st.session_state["selected_file"] 
 
 selected_file = st.session_state["selected_file"]
 
-st.write("DEBUG FILE:", selected_file)
-
 payload = load_scored_json(os.path.join(data_dir, selected_file))
 df = build_segments_df(payload)
 speakers = get_speakers(payload, df)
@@ -179,15 +177,15 @@ for emotion in trace_order:
 
     fig.add_trace(
         go.Bar(
-            x=group["duration"],                 # width of bar
+            x=group["duration"],
             y=group["speaker"],
-            base=group["start_min"],             # starting position
+            base=group["start_min"],
             orientation="h",
             name=emotion,
             marker=dict(
                 color=color_map[emotion],
                 line=dict(color="white", width=2),
-        ),
+            ),
             customdata=group[["segment_id", "start_min", "end_min", "speaker"]].values,
             hovertemplate=(
                 "Segment %{customdata[0]}<br>"
@@ -195,10 +193,9 @@ for emotion in trace_order:
                 "Time: %{customdata[1]:.2f} - %{customdata[2]:.2f} min<br>"
                 f"{emotion}<extra></extra>"
             ),
+            showlegend=True,
         )
     )
-
-fig.update_layout(barmode="overlay")
 
 # Selected segment
 selected_row = emotion_df.iloc[selected_idx]
