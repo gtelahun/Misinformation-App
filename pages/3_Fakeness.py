@@ -252,7 +252,6 @@ fig.update_layout(
 )
 
 fig.update_xaxes(
-    range=[0, fake_df["end_min"].max()],  # 🔥 important fix
     showgrid=True,
     gridcolor="#E5E7EB",
     zeroline=False,
