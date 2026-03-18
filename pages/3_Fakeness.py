@@ -253,7 +253,7 @@ fig.update_layout(
 )
 
 fig.update_xaxes(
-    range=[0, emotion_df["end_min"].max()],
+    range=[0, fake_df["end_min"].max()],
     constrain="domain"
 )
 
