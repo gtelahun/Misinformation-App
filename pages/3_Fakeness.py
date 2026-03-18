@@ -26,9 +26,10 @@ if not files:
     st.warning("No *_scored.json files found.")
     st.stop()
 
-selected_file = st.session_state.get("selected_file", files[0])
-if selected_file not in files:
-    selected_file = files[0]
+if "selected_file" not in st.session_state or st.session_state["selected_file"] not in files:
+    st.session_state["selected_file"] = files[0]
+
+selected_file = st.session_state["selected_file"]
 
 payload = load_scored_json(os.path.join(data_dir, selected_file))
 df = build_segments_df(payload)
