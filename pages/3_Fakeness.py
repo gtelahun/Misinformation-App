@@ -253,6 +253,11 @@ fig.update_layout(
 )
 
 fig.update_xaxes(
+    range=[0, emotion_df["end_min"].max()],
+    constrain="domain"
+)
+
+fig.update_xaxes(
     showgrid=True,
     gridcolor="#E5E7EB",
     zeroline=False,
