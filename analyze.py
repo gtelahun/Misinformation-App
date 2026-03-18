@@ -42,11 +42,11 @@ from math import sqrt
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv(override=True)
 
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ============================================================
 # STAGE LOGGING + TIMING HELPERS
