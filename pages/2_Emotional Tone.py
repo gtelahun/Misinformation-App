@@ -226,11 +226,54 @@ fig.update_layout(
     margin=dict(l=40, r=20, t=20, b=70),
 )
 
+# -----------------------------
+fig = go.Figure()
+
+# We store a reliable mapping from each trace point to the global segment index
+trace_point_to_global_idx = {}
+
+for emotion in trace_order:
+    group = emotion_df[emotion_df["emotion_group"] == emotion].copy()
+    if group.empty:
+        continue
+
+    group = group.sort_values(["start_min", "end_min"]).reset_index(drop=True)
+
+    # map point number within this trace -> global dataframe index
+    point_map = {}
+    for point_num, (_, row) in enumerate(group.iterrows()):
+        global_idx = int(row["segment_id"]) - 1
+        point_map[point_num] = global_idx
+    trace_point_to_global_idx[emotion] = point_map
+
+    fig.add_trace(
+        go.Bar(
+            x=group["duration"],
+            y=group["speaker"],
+            base=group["start_min"],
+            orientation="h",
+            name=emotion,
+            marker=dict(
+                color=color_map[emotion],
+                line=dict(color="white", width=2),
+            ),
+            customdata=group[["segment_id", "start_min", "end_min", "speaker"]].values,
+            hovertemplate=(
+                "Segment %{customdata[0]}<br>"
+                "Speaker: %{customdata[3]}<br>"
+                "Time: %{customdata[1]:.2f} - %{customdata[2]:.2f} min<br>"
+                f"{emotion}<extra></extra>"
+            ),
+            showlegend=True,
+        )
+    )
 fig.update_xaxes(
+    range=[0, emotion_df["end_min"].max()],
     showgrid=True,
     gridcolor="#E5E7EB",
     zeroline=False,
 )
+
 fig.update_yaxes(
     categoryorder="array",
     categoryarray=speaker_order,

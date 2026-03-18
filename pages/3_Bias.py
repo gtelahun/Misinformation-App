@@ -226,6 +226,7 @@ fig.update_layout(
 )
 
 fig.update_xaxes(
+    range=[0, bias_df["end_min"].max()],  # 🔥 important
     showgrid=True,
     gridcolor="#E5E7EB",
     zeroline=False,

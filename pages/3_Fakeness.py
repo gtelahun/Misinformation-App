@@ -44,14 +44,14 @@ if df.empty:
 # -----------------------------
 # Explanation
 # -----------------------------
-with st.expander("How truth risk is interpreted"):
+with st.expander("How fakeness is interpreted"):
     st.markdown(
         """
 - **Low Risk** → likely factual / well-supported  
 - **Moderate Risk** → partially supported or uncertain  
 - **High Risk** → likely inaccurate, misleading, or unsupported  
 
-Color intensity reflects truth risk.
+Color intensity reflects fakeness.
 """
     )
 
@@ -252,6 +252,7 @@ fig.update_layout(
 )
 
 fig.update_xaxes(
+    range=[0, fake_df["end_min"].max()],  # 🔥 important fix
     showgrid=True,
     gridcolor="#E5E7EB",
     zeroline=False,

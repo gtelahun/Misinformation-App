@@ -8,9 +8,7 @@ import pandas as pd
 import streamlit as st
 
 
-import os
-
-DATA_DIR_DEFAULT = os.path.join(os.getcwd(), "data")
+DATA_DIR_DEFAULT = "data"
 
 
 METRIC_DESCRIPTIONS = {
