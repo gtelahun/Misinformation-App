@@ -39,6 +39,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
 from math import sqrt
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 from openai import OpenAI
 
 client = OpenAI()
