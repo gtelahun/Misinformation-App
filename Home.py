@@ -15,6 +15,13 @@ from utils import (
     minutes_str,
 )
 
+VIDEO_MAP = {
+    "College Pay Discussion_scored.json": "https://www.youtube.com/watch?v=GiluPtgwk8o",
+    "How Vaccines Work_scored.json": "https://www.youtube.com/watch?v=zBkVCpbNnkU",
+    "Lebron MJ Debate_scored.json": "https://www.youtube.com/watch?v=bBnjJfF_lZc",
+    "Trump Harris Debate_scored.json": "https://www.youtube.com/watch?v=OQgE0ETV81s&t=90s",
+}
+
 st.set_page_config(
     page_title="Verity: A Digital Media Misinformation Detector",
     layout="wide",
@@ -75,6 +82,16 @@ st.caption("Bias • Fakeness • Emotional Tone")
 st.write("")
 
 st.markdown(f"**Selected file:** `{selected}`")
+
+# 🔥 ADD VIDEO HERE
+video_url = VIDEO_MAP.get(selected)
+
+if video_url:
+    st.video(video_url)
+else:
+    st.info("No video linked for this file.")
+
+st.write("")
 
 st.write("")
 

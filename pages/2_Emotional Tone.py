@@ -1,7 +1,8 @@
 import os
 import streamlit as st
 import pandas as pd
-import altair as alt
+import plotly.graph_objects as go
+from streamlit_plotly_events import plotly_events
 
 from utils import (
     DATA_DIR_DEFAULT,
@@ -16,7 +17,7 @@ st.set_page_config(page_title="Emotional Tone")
 st.markdown(clean_css(), unsafe_allow_html=True)
 
 # -----------------------------
-# Load Data
+# Load data
 # -----------------------------
 data_dir = st.session_state.get("DATA_DIR", DATA_DIR_DEFAULT)
 files = list_scored_json_files(data_dir)
@@ -25,16 +26,16 @@ if not files:
     st.warning("No *_scored.json files found in ./data/")
     st.stop()
 
-selected = st.session_state.get("selected_file", files[0])
-if selected not in files:
-    selected = files[0]
+selected_file = st.session_state.get("selected_file", files[0])
+if selected_file not in files:
+    selected_file = files[0]
 
-payload = load_scored_json(os.path.join(data_dir, selected))
+payload = load_scored_json(os.path.join(data_dir, selected_file))
 df = build_segments_df(payload)
 speakers = get_speakers(payload, df)
 
 st.markdown("### Emotional Tone")
-st.caption("Visualizes emotional framing over time. Select a segment below to explore details.")
+st.caption("Click a segment to explore details.")
 
 if df.empty:
     st.info("No segments available.")
@@ -44,178 +45,289 @@ if df.empty:
 # Explanation
 # -----------------------------
 with st.expander("How emotion is grouped"):
-    st.markdown("""
+    st.markdown(
+        """
 - **Positive** → supportive / optimistic  
 - **Neutral** → informational  
 - **Negative** → critical / emotional  
 
 Each block represents a segment of speech.
-""")
+"""
+    )
 
 # -----------------------------
-# Speaker Filter
+# Speaker filter
 # -----------------------------
 speaker_choice = st.selectbox(
     "Speaker",
     options=["All"] + speakers,
-    index=0
+    index=0,
+    key="emotion_speaker_choice",
 )
 
-# make a working copy and filter FIRST
+# -----------------------------
+# Build filtered working df
+# -----------------------------
 work = df.copy()
 
 if speaker_choice != "All":
-    work = work[work["speaker"] == speaker_choice]
+    work = work[work["speaker"] == speaker_choice].copy()
 
-# drop incomplete rows (must happen after filter)
-work = work.dropna(subset=["start_min", "end_min", "emotion_tone"])
+work = work.dropna(subset=["start_min", "end_min", "emotion_tone"]).copy()
 
 if work.empty:
     st.warning("No data after filters.")
     st.stop()
 
 # -----------------------------
-# Emotion grouping function
+# Emotion grouping
 # -----------------------------
 def group_emotion(e):
-    # defensive: handle non-string
-    e = str(e).lower()
+    e = str(e).strip().lower()
 
     if e in ["enthusiastic", "optimistic", "supportive", "positive"]:
         return "Positive"
-    elif e in ["angry", "frustration", "fear", "defensive", "critical", "sadness", "confrontational"]:
+    elif e in [
+        "angry",
+        "frustration",
+        "fear",
+        "defensive",
+        "critical",
+        "sadness",
+        "confrontational",
+        "negative",
+    ]:
         return "Negative"
     else:
         return "Neutral"
 
-# -----------------------------
-# Build emotion_df from filtered work
-# -----------------------------
 work["emotion_group"] = work["emotion_tone"].apply(group_emotion)
 
-# sort and assign segment ids AFTER filtering (this is the important fix)
-emotion_df = work.sort_values("start_min").reset_index(drop=True)
-emotion_df["segment_id"] = emotion_df.index + 1  # 1-based id for UI
+# -----------------------------
+# Sort + stable ids
+# -----------------------------
+emotion_df = work.sort_values(["start_min", "end_min"]).reset_index(drop=True).copy()
+emotion_df["segment_id"] = emotion_df.index + 1
+emotion_df["duration"] = emotion_df["end_min"] - emotion_df["start_min"]
+
+# remove any zero/negative durations just in case
+emotion_df = emotion_df[emotion_df["duration"] > 0].reset_index(drop=True)
+emotion_df["segment_id"] = emotion_df.index + 1
+
+if emotion_df.empty:
+    st.warning("No valid emotion segments available.")
+    st.stop()
+
+n_segments = len(emotion_df)
 
 # -----------------------------
-# Slider Selection (human-friendly index)
+# Reset selection when file/filter changes
 # -----------------------------
-st.write("")  # spacing
+selection_context = (selected_file, speaker_choice, n_segments)
+if st.session_state.get("emotion_selection_context") != selection_context:
+    st.session_state["selected_segment_idx"] = 0
+    st.session_state["emotion_selection_context"] = selection_context
 
-# ensure session state key exists
 if "selected_segment_idx" not in st.session_state:
     st.session_state["selected_segment_idx"] = 0
 
-n_segments = len(emotion_df)
-if n_segments == 0:
-    st.info("No emotion segments available.")
-    st.stop()
-
-# clamp stored index to valid range (important when switching speakers/files)
-st.session_state["selected_segment_idx"] = min(max(0, st.session_state["selected_segment_idx"]), n_segments - 1)
-
-# slider uses 1..n for human-friendly numbering
-slider_val = st.slider(
-    "Segment (timeline)",
-    min_value=1,
-    max_value=n_segments,
-    value=st.session_state["selected_segment_idx"] + 1,
+st.session_state["selected_segment_idx"] = min(
+    max(0, st.session_state["selected_segment_idx"]),
+    n_segments - 1,
 )
 
-# convert back to 0-based index and store
-selected_idx = int(slider_val) - 1
-st.session_state["selected_segment_idx"] = selected_idx
-
-# fetch selected row (safe because we've clamped above)
-selected_row = emotion_df.iloc[selected_idx]
-selected_df = emotion_df.iloc[[selected_idx]]  # small df for highlight
-
-st.caption(
-    f"Segment {selected_idx + 1} of {n_segments} • "
-    f"{selected_row['speaker']} • "
-    f"{selected_row['start_min']:.2f}-{selected_row['end_min']:.2f} min"
-)
+selected_idx = st.session_state["selected_segment_idx"]
 
 # -----------------------------
-# Emotion Heatmap + Highlight
+# Colors + trace order
 # -----------------------------
-base = (
-    alt.Chart(emotion_df)
-    .mark_rect(stroke="white", strokeWidth=2)
-    .encode(
-        x=alt.X("start_min:Q", title="Time (minutes)"),
-        x2="end_min:Q",
-        y=alt.Y(
-            "speaker:N",
-            title="Speaker",
-            scale=alt.Scale(paddingInner=0.7)
-        ),
-        color=alt.Color(
-            "emotion_group:N",
-            scale=alt.Scale(
-                domain=["Positive", "Neutral", "Negative"],
-                range=["#16A34A", "#F59E0B", "#DC2626"]
+color_map = {
+    "Positive": "#16A34A",
+    "Neutral": "#F59E0B",
+    "Negative": "#DC2626",
+}
+trace_order = ["Positive", "Neutral", "Negative"]
+
+# Keep speaker order consistent and match original feel
+speaker_order = list(emotion_df["speaker"].drop_duplicates())
+speaker_order = sorted(speaker_order)
+
+# -----------------------------
+# Build chart
+# -----------------------------
+fig = go.Figure()
+
+# We store a reliable mapping from each trace point to the global segment index
+trace_point_to_global_idx = {}
+
+for emotion in trace_order:
+    group = emotion_df[emotion_df["emotion_group"] == emotion].copy()
+    if group.empty:
+        continue
+
+    group = group.sort_values(["start_min", "end_min"]).reset_index(drop=True)
+
+    # map point number within this trace -> global dataframe index
+    point_map = {}
+    for point_num, (_, row) in enumerate(group.iterrows()):
+        global_idx = int(row["segment_id"]) - 1
+        point_map[point_num] = global_idx
+    trace_point_to_global_idx[emotion] = point_map
+
+    fig.add_trace(
+        go.Bar(
+            x=group["duration"],
+            y=group["speaker"],
+            base=group["start_min"],
+            orientation="h",
+            name=emotion,
+            marker=dict(
+                color=color_map[emotion],
+                line=dict(color="white", width=2),
             ),
-            title="Emotion"
-        ),
-        tooltip=[
-            alt.Tooltip("segment_id:Q", title="Segment"),
-            alt.Tooltip("speaker:N", title="Speaker"),
-            alt.Tooltip("start_min:Q", title="Start", format=".2f"),
-            alt.Tooltip("end_min:Q", title="End", format=".2f"),
-            alt.Tooltip("emotion_group:N", title="Emotion"),
-        ],
+            customdata=group[["segment_id", "start_min", "end_min", "speaker"]].values,
+            hovertemplate=(
+                "Segment %{customdata[0]}<br>"
+                "Speaker: %{customdata[3]}<br>"
+                "Time: %{customdata[1]:.2f} - %{customdata[2]:.2f} min<br>"
+                f"{emotion}<extra></extra>"
+            ),
+            showlegend=True,
+        )
     )
+
+# Selected segment
+selected_row = emotion_df.iloc[selected_idx]
+
+# Highlight selected segment with outline
+fig.add_shape(
+    type="rect",
+    x0=float(selected_row["start_min"]),
+    x1=float(selected_row["end_min"]),
+    y0=selected_row["speaker"],
+    y1=selected_row["speaker"],
+    xref="x",
+    yref="y",
+    line=dict(color="black", width=4),
+    fillcolor="rgba(0,0,0,0)",
+    layer="above",
 )
 
-# highlight is an outline rect over the selected segment
-highlight = (
-    alt.Chart(selected_df)
-    .mark_rect(fillOpacity=0, stroke="black", strokeWidth=4)
-    .encode(
-        x="start_min:Q",
-        x2="end_min:Q",
-        y=alt.Y("speaker:N", scale=alt.Scale(paddingInner=0.7))
-    )
+# Axis + layout styling
+fig.update_layout(
+    barmode="overlay",
+    height=140 + 80 * len(speaker_order),
+    xaxis_title="Time (minutes)",
+    yaxis_title="Speaker",
+    legend_title="Emotion",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    clickmode="event+select",
+    margin=dict(l=40, r=20, t=20, b=70),
 )
 
-heatmap = (
-    (base + highlight)
-    .properties(height=140 + 80 * len(emotion_df["speaker"].unique()))
-    .configure_axis(gridColor="#E5E7EB", gridOpacity=0.4)
+fig.update_xaxes(
+    showgrid=True,
+    gridcolor="#E5E7EB",
+    zeroline=False,
+)
+fig.update_yaxes(
+    categoryorder="array",
+    categoryarray=speaker_order,
 )
 
-st.altair_chart(heatmap, use_container_width=True)
+# -----------------------------
+# Click handling
+# IMPORTANT: do not also call st.plotly_chart(fig)
+# -----------------------------
+selected_points = plotly_events(
+    fig,
+    click_event=True,
+    hover_event=False,
+    select_event=False,
+    override_height=140 + 80 * len(speaker_order),
+    key="emotion_plot",
+)
+
+# Robust click parsing
+if selected_points:
+    pt = selected_points[0]
+
+    new_idx = None
+
+    # First try customdata if available
+    if "customdata" in pt and pt["customdata"]:
+        try:
+            clicked_segment_id = int(pt["customdata"][0])
+            new_idx = clicked_segment_id - 1
+        except Exception:
+            new_idx = None
+
+    # Fallback: use curveNumber + pointNumber
+    if new_idx is None and "curveNumber" in pt and "pointNumber" in pt:
+        try:
+            curve_num = int(pt["curveNumber"])
+            point_num = int(pt["pointNumber"])
+            trace_name = fig.data[curve_num].name
+            new_idx = trace_point_to_global_idx[trace_name][point_num]
+        except Exception:
+            new_idx = None
+
+    if new_idx is not None:
+        new_idx = min(max(0, new_idx), n_segments - 1)
+        if new_idx != st.session_state["selected_segment_idx"]:
+            st.session_state["selected_segment_idx"] = new_idx
+            st.rerun()
+
+# -----------------------------
+# Re-read selected row after possible click/rerun
+# -----------------------------
+selected_idx = min(max(0, st.session_state["selected_segment_idx"]), n_segments - 1)
+selected_row = emotion_df.iloc[selected_idx]
 
 # -----------------------------
 # Selected Segment Details
 # -----------------------------
-st.write("")
 st.markdown("### Selected Segment Details")
 
-start = selected_row.get("start_min")
-end = selected_row.get("end_min")
-time_str = f"{start:.2f}–{end:.2f} min"
+# Safe values
+start = selected_row.get("start_min") or 0
+end = selected_row.get("end_min") or 0
+time_str = f"{start:.2f}-{end:.2f} min"
 
-bias_val = selected_row.get("bias_score")
-fake_val = selected_row.get("fakeness_score")
+emotion = selected_row.get("emotion_group", "Neutral")
 
-bias_str = f"{bias_val:.2f}" if pd.notna(bias_val) else "—"
-fake_str = f"{fake_val:.2f}" if pd.notna(fake_val) else "—"
+emotion_color = {
+    "Positive": "#16A34A",
+    "Neutral": "#F59E0B",
+    "Negative": "#DC2626"
+}.get(emotion, "#6B7280")
 
-st.markdown(
-    f"""
-    <div class="signal-card">
-      <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
-        <div><b>Speaker:</b> {selected_row.get("speaker")}</div>
-        <div><b>Time:</b> {time_str}</div>
-        <div><b>Emotion:</b> {selected_row.get("emotion_group")}</div>
-      </div>
+html = f"""<div class="signal-card">
 
-      <div style="height:0.6rem;"></div>
-
-      <div><b>Segment:</b> {selected_row.get("text", "—")}</div>
+<div style="text-align:center; margin-bottom:10px;">
+    <div style="
+        display:inline-block;
+        background:{emotion_color};
+        color:white;
+        padding:8px 18px;
+        border-radius:999px;
+        font-weight:700;
+        font-size:1.1rem;
+    ">
+        {emotion}
     </div>
-    """,
-    unsafe_allow_html=True,
-)
+</div>
+
+<div style="text-align:center; font-size:0.95rem; color:#6B7280; margin-bottom:12px;">
+    {selected_row.get("speaker", "—")} • {time_str}
+</div>
+
+<div style="line-height:1.7;">
+    <div style="font-weight:600; margin-bottom:4px;">Segment</div>
+    {selected_row.get("text", "—")}
+</div>
+
+</div>"""
+
+st.markdown(html, unsafe_allow_html=True)
