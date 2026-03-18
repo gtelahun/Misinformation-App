@@ -179,15 +179,15 @@ for emotion in trace_order:
 
     fig.add_trace(
         go.Bar(
-            x=group["duration"],
+            x=group["duration"],                 # width of bar
             y=group["speaker"],
-            base=group["start_min"],
+            base=group["start_min"],             # starting position
             orientation="h",
             name=emotion,
             marker=dict(
                 color=color_map[emotion],
                 line=dict(color="white", width=2),
-            ),
+        ),
             customdata=group[["segment_id", "start_min", "end_min", "speaker"]].values,
             hovertemplate=(
                 "Segment %{customdata[0]}<br>"
@@ -195,9 +195,10 @@ for emotion in trace_order:
                 "Time: %{customdata[1]:.2f} - %{customdata[2]:.2f} min<br>"
                 f"{emotion}<extra></extra>"
             ),
-            showlegend=True,
         )
     )
+
+fig.update_layout(barmode="overlay")
 
 # Selected segment
 selected_row = emotion_df.iloc[selected_idx]
