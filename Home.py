@@ -86,8 +86,12 @@ st.markdown(f"**Selected file:** `{selected}`")
 # 🔥 ADD VIDEO HERE
 video_url = VIDEO_MAP.get(selected)
 
+col1, col2, col3 = st.columns([1, 2, 1])
+
 if video_url:
-    st.video(video_url)
+    with col2:
+        st.video(video_url, width=750)
+    
 else:
     st.info("No video linked for this file.")
 
